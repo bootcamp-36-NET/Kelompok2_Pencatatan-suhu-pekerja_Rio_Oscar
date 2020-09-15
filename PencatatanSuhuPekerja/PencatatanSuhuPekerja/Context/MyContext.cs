@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using PencatatanSuhuPekerjaAPI.Model;
+using PencatatanSuhuPekerjaAPI.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +13,10 @@ namespace PencatatanSuhuPekerjaAPI.Context
         public DbSet<Employee> Employees { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Role> Roles { get; set; }
-        public DbSet<UserRole> UserRoles { get; set; }
+        public DbSet<UserRole> UserRoles { get; set; }    
+        public DbSet<Department> Departments { get; set; }
+        public DbSet<Division> Divisions { get; set; }
+        public DbSet<Temperature> Temperatures { get; set; }
 
         public MyContext(DbContextOptions<MyContext> options) : base(options)
         {
@@ -42,5 +45,6 @@ namespace PencatatanSuhuPekerjaAPI.Context
 
             base.OnModelCreating(modelBuilder);
         }
+
     }
 }
