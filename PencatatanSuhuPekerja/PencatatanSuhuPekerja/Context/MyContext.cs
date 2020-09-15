@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using PencatatanSuhuPekerjaAPI.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,5 +13,9 @@ namespace PencatatanSuhuPekerjaAPI.Context
         {
 
         }
+        
+        public DbSet<Department> Departments { get; set; }
+        public DbSet<Division> Divisions { get; set; }
+        public DbSet<Temperature> Temperatures { get; set; }
     }
 }

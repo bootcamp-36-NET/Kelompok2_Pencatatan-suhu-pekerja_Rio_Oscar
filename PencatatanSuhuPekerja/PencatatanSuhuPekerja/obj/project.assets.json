@@ -5602,7 +5602,7 @@
       ]
     },
     "Microsoft.CodeAnalysis.Analyzers/1.1.0": {
-      "sha512": "HS3iRWZKcUw/8eZ/08GXKY2Bn7xNzQPzf8gRPHGSowX7u7XXu9i9YEaBeBNKUXWfI7qjvT2zXtLUvbN0hds8vg==",
+      "sha512": "U6pYZHYQ+JyyYkyCqmratm4hpeAiuXrYn2UJ740cK9thvdlmwgzsT0eW+9btsFYvfriKKygSvg5NmCoYXPZPdg==",
       "type": "package",
       "path": "microsoft.codeanalysis.analyzers/1.1.0",
       "hasTools": true,
@@ -8951,7 +8951,7 @@
       ]
     },
     "System.Linq.Queryable/4.0.1": {
-      "sha512": "Yn/WfYe9RoRfmSLvUt2JerP0BTGGykCZkQPgojaxgzF2N0oPo+/AhB8TXOpdCcNlrG3VRtsamtK2uzsp3cqRVw==",
+      "sha512": "s8lRvCyjhK38l/4vz2aZnZAcefRDhJaDgeAT+GiMdUAIlSVoP5+nr6Ang41qu6nH06T69TXRdgR0/T7aVsm87Q==",
       "type": "package",
       "path": "system.linq.queryable/4.0.1",
       "files": [
@@ -11817,23 +11817,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Geraldy\\.nuget\\packages\\": {},
+    "C:\\Users\\Gin\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Geraldy\\source\\repos\\PencatatanSuhuPekerja\\PencatatanSuhuPekerja\\PencatatanSuhuPekerjaAPI.csproj",
+      "projectUniqueName": "E:\\Rio\\Tugas Bootcamp\\Kelompok4_Pencatatan-suhu-pekerja_Rio_Oscar\\PencatatanSuhuPekerja\\PencatatanSuhuPekerja\\PencatatanSuhuPekerjaAPI.csproj",
       "projectName": "PencatatanSuhuPekerjaAPI",
-      "projectPath": "C:\\Users\\Geraldy\\source\\repos\\PencatatanSuhuPekerja\\PencatatanSuhuPekerja\\PencatatanSuhuPekerjaAPI.csproj",
-      "packagesPath": "C:\\Users\\Geraldy\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Geraldy\\source\\repos\\PencatatanSuhuPekerja\\PencatatanSuhuPekerja\\obj\\",
+      "projectPath": "E:\\Rio\\Tugas Bootcamp\\Kelompok4_Pencatatan-suhu-pekerja_Rio_Oscar\\PencatatanSuhuPekerja\\PencatatanSuhuPekerja\\PencatatanSuhuPekerjaAPI.csproj",
+      "packagesPath": "C:\\Users\\Gin\\.nuget\\packages\\",
+      "outputPath": "E:\\Rio\\Tugas Bootcamp\\Kelompok4_Pencatatan-suhu-pekerja_Rio_Oscar\\PencatatanSuhuPekerja\\PencatatanSuhuPekerja\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Geraldy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Gin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -11869,7 +11869,6 @@
             "version": "[2.1.2, )"
           },
           "Microsoft.NETCore.App": {
-            "suppressParent": "All",
             "target": "Package",
             "version": "[2.1.0, )",
             "autoReferenced": true
