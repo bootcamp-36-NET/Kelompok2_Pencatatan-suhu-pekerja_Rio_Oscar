@@ -11823,11 +11823,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Geraldy\\source\\repos\\PencatatanSuhuPekerja\\PencatatanSuhuPekerja\\PencatatanSuhuPekerjaAPI.csproj",
+      "projectUniqueName": "C:\\Users\\Geraldy\\source\\repos\\Kelompok2_Pencatatan-suhu-pekerja_Rio_Oscar\\PencatatanSuhuPekerja\\PencatatanSuhuPekerja\\PencatatanSuhuPekerjaAPI.csproj",
       "projectName": "PencatatanSuhuPekerjaAPI",
-      "projectPath": "C:\\Users\\Geraldy\\source\\repos\\PencatatanSuhuPekerja\\PencatatanSuhuPekerja\\PencatatanSuhuPekerjaAPI.csproj",
+      "projectPath": "C:\\Users\\Geraldy\\source\\repos\\Kelompok2_Pencatatan-suhu-pekerja_Rio_Oscar\\PencatatanSuhuPekerja\\PencatatanSuhuPekerja\\PencatatanSuhuPekerjaAPI.csproj",
       "packagesPath": "C:\\Users\\Geraldy\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Geraldy\\source\\repos\\PencatatanSuhuPekerja\\PencatatanSuhuPekerja\\obj\\",
+      "outputPath": "C:\\Users\\Geraldy\\source\\repos\\Kelompok2_Pencatatan-suhu-pekerja_Rio_Oscar\\PencatatanSuhuPekerja\\PencatatanSuhuPekerja\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

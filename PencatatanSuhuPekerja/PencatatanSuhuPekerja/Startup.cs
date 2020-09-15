@@ -13,7 +13,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using PencatatanSuhuPekerjaAPI.Context;
 
-namespace PencatatanSuhuPekerja
+namespace PencatatanSuhuPekerjaAPI
 {
     public class Startup
     {

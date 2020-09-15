@@ -1,0 +1,14 @@
+C:\Users\Geraldy\source\repos\Kelompok2_Pencatatan-suhu-pekerja_Rio_Oscar\PencatatanSuhuPekerja\PencatatanSuhuPekerja\bin\Debug\netcoreapp2.1\PencatatanSuhuPekerjaAPI.deps.json
+C:\Users\Geraldy\source\repos\Kelompok2_Pencatatan-suhu-pekerja_Rio_Oscar\PencatatanSuhuPekerja\PencatatanSuhuPekerja\bin\Debug\netcoreapp2.1\PencatatanSuhuPekerjaAPI.runtimeconfig.json
+C:\Users\Geraldy\source\repos\Kelompok2_Pencatatan-suhu-pekerja_Rio_Oscar\PencatatanSuhuPekerja\PencatatanSuhuPekerja\bin\Debug\netcoreapp2.1\PencatatanSuhuPekerjaAPI.runtimeconfig.dev.json
+C:\Users\Geraldy\source\repos\Kelompok2_Pencatatan-suhu-pekerja_Rio_Oscar\PencatatanSuhuPekerja\PencatatanSuhuPekerja\bin\Debug\netcoreapp2.1\PencatatanSuhuPekerjaAPI.dll
+C:\Users\Geraldy\source\repos\Kelompok2_Pencatatan-suhu-pekerja_Rio_Oscar\PencatatanSuhuPekerja\PencatatanSuhuPekerja\bin\Debug\netcoreapp2.1\PencatatanSuhuPekerjaAPI.pdb
+C:\Users\Geraldy\source\repos\Kelompok2_Pencatatan-suhu-pekerja_Rio_Oscar\PencatatanSuhuPekerja\PencatatanSuhuPekerja\obj\Debug\netcoreapp2.1\PencatatanSuhuPekerjaAPI.csprojAssemblyReference.cache
+C:\Users\Geraldy\source\repos\Kelompok2_Pencatatan-suhu-pekerja_Rio_Oscar\PencatatanSuhuPekerja\PencatatanSuhuPekerja\obj\Debug\netcoreapp2.1\PencatatanSuhuPekerjaAPI.csproj.CoreCompileInputs.cache
+C:\Users\Geraldy\source\repos\Kelompok2_Pencatatan-suhu-pekerja_Rio_Oscar\PencatatanSuhuPekerja\PencatatanSuhuPekerja\obj\Debug\netcoreapp2.1\PencatatanSuhuPekerjaAPI.RazorAssemblyInfo.cache
+C:\Users\Geraldy\source\repos\Kelompok2_Pencatatan-suhu-pekerja_Rio_Oscar\PencatatanSuhuPekerja\PencatatanSuhuPekerja\obj\Debug\netcoreapp2.1\PencatatanSuhuPekerjaAPI.RazorAssemblyInfo.cs
+C:\Users\Geraldy\source\repos\Kelompok2_Pencatatan-suhu-pekerja_Rio_Oscar\PencatatanSuhuPekerja\PencatatanSuhuPekerja\obj\Debug\netcoreapp2.1\PencatatanSuhuPekerjaAPI.AssemblyInfoInputs.cache
+C:\Users\Geraldy\source\repos\Kelompok2_Pencatatan-suhu-pekerja_Rio_Oscar\PencatatanSuhuPekerja\PencatatanSuhuPekerja\obj\Debug\netcoreapp2.1\PencatatanSuhuPekerjaAPI.AssemblyInfo.cs
+C:\Users\Geraldy\source\repos\Kelompok2_Pencatatan-suhu-pekerja_Rio_Oscar\PencatatanSuhuPekerja\PencatatanSuhuPekerja\obj\Debug\netcoreapp2.1\PencatatanSuhuPekerjaAPI.RazorTargetAssemblyInfo.cache
+C:\Users\Geraldy\source\repos\Kelompok2_Pencatatan-suhu-pekerja_Rio_Oscar\PencatatanSuhuPekerja\PencatatanSuhuPekerja\obj\Debug\netcoreapp2.1\PencatatanSuhuPekerjaAPI.dll
+C:\Users\Geraldy\source\repos\Kelompok2_Pencatatan-suhu-pekerja_Rio_Oscar\PencatatanSuhuPekerja\PencatatanSuhuPekerja\obj\Debug\netcoreapp2.1\PencatatanSuhuPekerjaAPI.pdb
