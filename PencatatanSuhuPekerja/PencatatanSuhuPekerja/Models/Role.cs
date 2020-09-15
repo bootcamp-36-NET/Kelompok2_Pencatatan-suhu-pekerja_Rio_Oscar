@@ -5,12 +5,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace PencatatanSuhuPekerjaAPI.Model
+namespace PencatatanSuhuPekerjaAPI.Models
 {
-    [Table("tb_tr_user_role")]
-    public class UserRole : IdentityUserRole<string>
+    [Table("tb_m_role")]
+    public class Role : IdentityRole
     {
-        public User User { get; set; }
-        public Role Role { get; set; }
+        public ICollection<UserRole> UserRoles { get; set; }
     }
 }

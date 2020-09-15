@@ -7,11 +7,18 @@ using System.Threading.Tasks;
 
 namespace PencatatanSuhuPekerjaAPI.Models
 {
-    [Table("temperatures")]
+    [Table("temperature")]
     public class Temperature
     {
         [Key]
         public string TemperatureId { get; set; }
+        public string EmployeeTemperature { get; set; }
         public DateTime Date { get; set; }
+
+
+
+        public string EmployeeId { get; set; }
+        [ForeignKey("EmployeeId")]
+        public Employee Employee { get; set; }
     }
 }

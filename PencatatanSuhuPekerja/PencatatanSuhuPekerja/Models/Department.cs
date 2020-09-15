@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PencatatanSuhuPekerjaAPI.Models
 {
-    [Table("tb_m_departments")]
+    [Table("tb_m_department")]
     public class Department
     {
         [Key]
