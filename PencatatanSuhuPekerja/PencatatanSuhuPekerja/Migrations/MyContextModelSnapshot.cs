@@ -21,42 +21,42 @@ namespace PencatatanSuhuPekerjaAPI.Migrations
 
             modelBuilder.Entity("PencatatanSuhuPekerjaAPI.Models.Department", b =>
                 {
-                    b.Property<string>("DepartmentId")
+                    b.Property<string>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<DateTime?>("CreatedAt");
+                    b.Property<DateTimeOffset?>("CreatedAt");
 
-                    b.Property<DateTime?>("DeletedAt");
+                    b.Property<DateTimeOffset?>("DeletedAt");
 
-                    b.Property<bool?>("IsDeleted");
+                    b.Property<bool?>("IsDelete");
 
                     b.Property<string>("Name");
 
-                    b.Property<DateTime?>("UpdateAt");
+                    b.Property<DateTimeOffset?>("UpdatedAt");
 
-                    b.HasKey("DepartmentId");
+                    b.HasKey("Id");
 
                     b.ToTable("tb_m_department");
                 });
 
             modelBuilder.Entity("PencatatanSuhuPekerjaAPI.Models.Division", b =>
                 {
-                    b.Property<string>("DivisionId")
+                    b.Property<string>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<DateTime?>("CreatedAt");
+                    b.Property<DateTimeOffset?>("CreatedAt");
 
-                    b.Property<DateTime?>("DeletedAt");
+                    b.Property<DateTimeOffset?>("DeletedAt");
 
                     b.Property<string>("DepartmentId");
 
-                    b.Property<bool?>("IsDeleted");
+                    b.Property<bool?>("IsDelete");
 
                     b.Property<string>("Name");
 
-                    b.Property<DateTime?>("UpdateAt");
+                    b.Property<DateTimeOffset?>("UpdatedAt");
 
-                    b.HasKey("DivisionId");
+                    b.HasKey("Id");
 
                     b.HasIndex("DepartmentId");
 
@@ -108,7 +108,7 @@ namespace PencatatanSuhuPekerjaAPI.Migrations
                     b.Property<string>("TemperatureId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<DateTime>("Date");
+                    b.Property<DateTimeOffset>("Date");
 
                     b.Property<string>("EmployeeId");
 

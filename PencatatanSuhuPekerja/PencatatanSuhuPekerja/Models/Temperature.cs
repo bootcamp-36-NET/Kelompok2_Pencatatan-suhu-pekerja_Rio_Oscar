@@ -13,7 +13,7 @@ namespace PencatatanSuhuPekerjaAPI.Models
         [Key]
         public string TemperatureId { get; set; }
         public string EmployeeTemperature { get; set; }
-        public DateTime Date { get; set; }
+        public DateTimeOffset Date { get; set; }
 
 
 
