@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace PencatatanSuhuPekerjaAPI.ViewModels.AccountVM
+namespace PencatatanSuhuPekerjaAPI.ViewModels.EmployeeVM
 {
     public class EditEmployeeVM
     {
@@ -14,5 +14,6 @@ namespace PencatatanSuhuPekerjaAPI.ViewModels.AccountVM
         public string DivisionId { get; set; }
         public string Email { get; set; }
         public string UserName { get; set; }
+        public List<string> UserRoles { get; set; }
     }
 }

@@ -64,6 +64,7 @@ namespace PencatatanSuhuPekerjaAPI
             services.AddTransient<SendEmailService>();
             services.AddTransient<TokenService>();
             services.AddScoped<AccountRepository>();
+            services.AddScoped<EmployeeRepository>();
 
         }
 

@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PencatatanSuhuPekerjaAPI.Repositories;
-using PencatatanSuhuPekerjaAPI.ViewModels.AccountVM;
+using PencatatanSuhuPekerjaAPI.ViewModels.EmployeeVM;
 
 namespace PencatatanSuhuPekerjaAPI.Controllers
 {
@@ -15,18 +15,18 @@ namespace PencatatanSuhuPekerjaAPI.Controllers
     [ApiController]
     public class EmployeesController : ControllerBase
     {
-        private readonly AccountRepository _accountRepository;
+        private readonly EmployeeRepository _employeeRepository;
 
-        public EmployeesController(AccountRepository accountRepository)
+        public EmployeesController(EmployeeRepository employeeRepository)
         {
-            this._accountRepository = accountRepository;
+            this._employeeRepository = employeeRepository;
         }
 
         // GET: Employees/
         [HttpGet]
         public async Task<ActionResult> GetAllEmployee()
         {
-            var allEmployee = await _accountRepository.GetAllEmployee();
+            var allEmployee = await _employeeRepository.GetAllEmployee();
             return Ok(allEmployee);
         }
 
@@ -34,7 +34,7 @@ namespace PencatatanSuhuPekerjaAPI.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult> GetUserById(string id)
         {
-            var selectedEmployee = await _accountRepository.GetProfile(id);
+            var selectedEmployee = await _employeeRepository.GetProfile(id);
             return Ok(selectedEmployee);
         }
 
@@ -42,7 +42,7 @@ namespace PencatatanSuhuPekerjaAPI.Controllers
         [HttpPut("{id}")]
         public async Task<ActionResult> EditEmployee(string id, EditEmployeeVM model)
         {
-            var result = await _accountRepository.EditEmployee(id, model);
+            var result = await _employeeRepository.EditEmployee(id, model);
             if (result != null)
             {
                 return BadRequest(result);
@@ -54,13 +54,13 @@ namespace PencatatanSuhuPekerjaAPI.Controllers
         [HttpDelete("{id}")]
         public async Task<ActionResult> DeleteUser(string id)
         {
-            var result = await _accountRepository.DeactivateEmpoyee(id);
+            var result = await _employeeRepository.DeactivateEmpoyee(id);
             if (result != null)
             {
                 return BadRequest(result);
             }
 
-            return Ok();
+            return Ok("Employee Deactivated !");
         }
     }
 }
