@@ -57,7 +57,7 @@ namespace PencatatanSuhuPekerjaAPI.Controllers
         // POST: Accounts/verify/{id}
         [HttpPost]
         [Route("verify/{id}")]
-        public async Task<ActionResult> Verify(string id, [FromBody]string code)
+        public async Task<ActionResult> VerifyAccount(string id, [FromBody]string code)
         {
             var result = await _accountRepository.Verify(id,code);
             if (result != null)
@@ -65,7 +65,7 @@ namespace PencatatanSuhuPekerjaAPI.Controllers
                 return BadRequest(result);
             }
 
-            return Ok("Successfully Registered !");
+            return Ok("Successfully Verified !");
         }
 
         // PUT: Accounts/{id}
@@ -78,7 +78,7 @@ namespace PencatatanSuhuPekerjaAPI.Controllers
                 return BadRequest(result);
             }
 
-            return Ok("Successfully Registered !");
+            return Ok("Successfully Edited !");
         }
 
         // PUT: Accounts/ChangePassword/{id}
@@ -91,7 +91,7 @@ namespace PencatatanSuhuPekerjaAPI.Controllers
                 return BadRequest(result);
             }
 
-            return Ok("Successfully Registered !");
+            return Ok("Successfully Changed !");
         }
     }
 }

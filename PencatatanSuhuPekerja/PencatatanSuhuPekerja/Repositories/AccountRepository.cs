@@ -241,9 +241,9 @@ namespace PencatatanSuhuPekerjaAPI.Repositories
 
             var claims = new List<Claim> {
                 new Claim("Id",existUser.Id),
-                new Claim("Role",stringRoles),
+                new Claim("Roles",stringRoles),
                 new Claim("Email", existUser.Email),
-                new Claim("IsVerified", existUser.EmailConfirmed.ToString())
+                new Claim("IsVerified", existUser.EmailConfirmed.ToString().ToLower())
              };
 
             var JWToken = _tokenService.GenerateAccessToken(claims);

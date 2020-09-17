@@ -1,0 +1,141 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
+    <meta name="author" content="Creative Tim">
+    <title>Argon Dashboard - Free Dashboard for Bootstrap 4</title>
+    <!-- Favicon -->
+    <link rel="icon" href="~/images//brand/favicon.png" type="image/png">
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
+    <!-- Icons -->
+    <link rel="stylesheet" href="~/vendor/nucleo/css/nucleo.css" type="text/css">
+    <link rel="stylesheet" href="~/vendor/1fortawesome/fontawesome-free/css/all.min.css" type="text/css">
+    <!-- Argon CSS -->
+    <link rel="stylesheet" href="~/css/argon.css?v=1.2.0" type="text/css">
+</head>
+<body class="bg-default">
+    <!-- Main content -->
+    <div class="main-content">
+        <!-- Header -->
+        <div class="header bg-gradient-primary py-7 py-lg-8 pt-lg-9">
+            <div class="container">
+                <div class="header-body text-center mb-7">
+                    <div class="row justify-content-center">
+                        <div class="col-xl-5 col-lg-6 col-md-8 px-5">
+                            <h1 class="text-white">ACCOUNT REGISTRATION</h1>
+                            <p class="text-lead text-white">APPLIKASI PENCATATAN SUHU KARYAWAN</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="separator separator-bottom separator-skew zindex-100">
+                <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                    <polygon class="fill-default" points="2560 0 2560 100 0 100"></polygon>
+                </svg>
+            </div>
+        </div>
+        <!-- Page content -->
+        <div class="container mt--8 pb-5">
+            <!-- Table -->
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-md-8">
+                    <div class="card bg-secondary border-0">
+                        <div class="card-body px-lg-5 py-lg-5">
+                            <div class="form-group  px-sm--5">
+                                <div class="row mx-0 mb-3">
+                                    <div class="col input-group input-group-merge input-group-alternative  mr-3 px-lg-0 py-lg-0">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="ni ni-single-02"></i></span>
+                                        </div>
+                                        <input type="text" id="FirstName" class="form-control" placeholder="First name">
+                                    </div>
+                                    <div class="col col input-group input-group-merge input-group-alternative ml-3 px-lg-0 py-lg-0">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="ni ni-single-02"></i></span>
+                                        </div>
+                                        <input type="text" id="LastName" class="form-control" placeholder="Last name">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group input-group-merge input-group-alternative mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="ni ni-circle-08"></i></span>
+                                    </div>
+                                    <input class="form-control" id="UserName" placeholder="User Name" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group input-group-merge input-group-alternative mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                                    </div>
+                                    <input class="form-control" id="Email" placeholder="Email" type="email">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group input-group-merge input-group-alternative mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="ni ni-mobile-button"></i></span>
+                                    </div>
+                                    <input class="form-control" id="PhoneNumber" placeholder="Phone Number" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group input-group-merge input-group-alternative">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                                    </div>
+                                    <input id="Password" class="form-control" placeholder="Password" type="password">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group input-group-merge input-group-alternative">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                                    </div>
+                                    <input class="form-control" id="ConfirmPassword" placeholder="Confirm Password" type="password">
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <button type="button" onclick="return Register()" class="btn btn-primary mt-4">Create account</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer class="py-5" id="footer-main">
+        <div class="container">
+            <div class="row align-items-center justify-content-xl-between">
+                <div class="col-xl-6">
+                    <div class="copyright text-center text-xl-left text-muted">
+                        &copy; 2020 <label class="font-weight-bold ml-1" target="_blank">Rio x Oscar</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Argon Scripts -->
+    <!-- Core -->
+    <script src="~/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="~/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/vendor/js-cookie/js.cookie.js"></script>
+    <script src="~/vendor/jquery.scrollbar/jquery.scrollbar.min.js"></script>
+    <script src="~/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js"></script>
+    <!-- Argon JS -->
+    <script src="~/js/argon.js?v=1.2.0"></script>
+    <!-- AJAX -->
+    <script src="~/scripts/AccountScripts/RegisterScript.js"></script>
+</body>
+</html>

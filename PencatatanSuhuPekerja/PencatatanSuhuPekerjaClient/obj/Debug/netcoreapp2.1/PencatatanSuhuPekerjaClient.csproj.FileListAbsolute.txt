@@ -61,3 +61,8 @@ E:\Rio\Tugas Bootcamp\Kelompok4_Pencatatan-suhu-pekerja_Rio_Oscar\PencatatanSuhu
 E:\Rio\Tugas Bootcamp\Kelompok4_Pencatatan-suhu-pekerja_Rio_Oscar\PencatatanSuhuPekerja\PencatatanSuhuPekerjaClient\obj\Debug\netcoreapp2.1\PencatatanSuhuPekerjaClient.dll
 E:\Rio\Tugas Bootcamp\Kelompok4_Pencatatan-suhu-pekerja_Rio_Oscar\PencatatanSuhuPekerja\PencatatanSuhuPekerjaClient\obj\Debug\netcoreapp2.1\PencatatanSuhuPekerjaClient.pdb
 E:\Rio\Tugas Bootcamp\Kelompok4_Pencatatan-suhu-pekerja_Rio_Oscar\PencatatanSuhuPekerja\PencatatanSuhuPekerjaClient\obj\Debug\netcoreapp2.1\PencatatanSuhuPekerjaClient.csproj.CopyComplete
+C:\Users\Geraldy\source\repos\Kelompok2_Pencatatan-suhu-pekerja_Rio_Oscar\PencatatanSuhuPekerja\PencatatanSuhuPekerjaClient\bin\Debug\netcoreapp2.1\PencatatanSuhuPekerjaAPI.dll
+C:\Users\Geraldy\source\repos\Kelompok2_Pencatatan-suhu-pekerja_Rio_Oscar\PencatatanSuhuPekerja\PencatatanSuhuPekerjaClient\bin\Debug\netcoreapp2.1\PencatatanSuhuPekerjaAPI.pdb
+C:\Users\Geraldy\source\repos\Kelompok2_Pencatatan-suhu-pekerja_Rio_Oscar\PencatatanSuhuPekerja\PencatatanSuhuPekerjaClient\obj\Debug\netcoreapp2.1\Razor\Views\Logins\Index.g.cshtml.cs
+C:\Users\Geraldy\source\repos\Kelompok2_Pencatatan-suhu-pekerja_Rio_Oscar\PencatatanSuhuPekerja\PencatatanSuhuPekerjaClient\obj\Debug\netcoreapp2.1\Razor\Views\Verifies\Index.g.cshtml.cs
+C:\Users\Geraldy\source\repos\Kelompok2_Pencatatan-suhu-pekerja_Rio_Oscar\PencatatanSuhuPekerja\PencatatanSuhuPekerjaClient\obj\Debug\netcoreapp2.1\Razor\Views\Registers\Index.g.cshtml.cs
