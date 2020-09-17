@@ -73,7 +73,7 @@ namespace PencatatanSuhuPekerjaAPI.Repositories
                 IsActive = true,
                 PhoneNumber = registerVM.PhoneNumber,
                 Salary = 0,
-                DivisionId = division.DivisionId
+                DivisionId = division.Id
             };
 
             User user = new User()
