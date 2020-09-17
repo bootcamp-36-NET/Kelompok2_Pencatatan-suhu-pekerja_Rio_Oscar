@@ -61,3 +61,6 @@ E:\Rio\Tugas Bootcamp\Kelompok4_Pencatatan-suhu-pekerja_Rio_Oscar\PencatatanSuhu
 E:\Rio\Tugas Bootcamp\Kelompok4_Pencatatan-suhu-pekerja_Rio_Oscar\PencatatanSuhuPekerja\PencatatanSuhuPekerjaClient\obj\Debug\netcoreapp2.1\PencatatanSuhuPekerjaClient.dll
 E:\Rio\Tugas Bootcamp\Kelompok4_Pencatatan-suhu-pekerja_Rio_Oscar\PencatatanSuhuPekerja\PencatatanSuhuPekerjaClient\obj\Debug\netcoreapp2.1\PencatatanSuhuPekerjaClient.pdb
 E:\Rio\Tugas Bootcamp\Kelompok4_Pencatatan-suhu-pekerja_Rio_Oscar\PencatatanSuhuPekerja\PencatatanSuhuPekerjaClient\obj\Debug\netcoreapp2.1\PencatatanSuhuPekerjaClient.csproj.CopyComplete
+E:\Rio\Tugas Bootcamp\Kelompok4_Pencatatan-suhu-pekerja_Rio_Oscar\PencatatanSuhuPekerja\PencatatanSuhuPekerjaClient\obj\Debug\netcoreapp2.1\PencatatanSuhuPekerjaClient.csprojAssemblyReference.cache
+E:\Rio\Tugas Bootcamp\Kelompok4_Pencatatan-suhu-pekerja_Rio_Oscar\PencatatanSuhuPekerja\PencatatanSuhuPekerjaClient\bin\Debug\netcoreapp2.1\PencatatanSuhuPekerjaAPI.dll
+E:\Rio\Tugas Bootcamp\Kelompok4_Pencatatan-suhu-pekerja_Rio_Oscar\PencatatanSuhuPekerja\PencatatanSuhuPekerjaClient\bin\Debug\netcoreapp2.1\PencatatanSuhuPekerjaAPI.pdb
