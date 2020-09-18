@@ -37,5 +37,13 @@ namespace PencatatanSuhuPekerjaAPI.Controllers
                 return data;
             }
         }
+
+        [HttpGet]
+        [Route("/getDivisionByDepartment/{id}")]
+        public async Task<IEnumerable<Division>> GetDivisionByDepartment(string id)
+        {
+            var divisions = await _division.GetAllDivisionByDepartment(id);
+            return divisions;
+        }
     }
 }

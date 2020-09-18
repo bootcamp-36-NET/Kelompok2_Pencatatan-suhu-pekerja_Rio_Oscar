@@ -46,7 +46,7 @@ namespace PencatatanSuhuPekerjaClient.Controllers
             //}
             //else
             //{
-                return Redirect("/error");
+                //return Redirect("/error");
             //}
 
         }
@@ -109,6 +109,27 @@ namespace PencatatanSuhuPekerjaClient.Controllers
                 return Ok(200);
             }
             return BadRequest(500);
+        }
+
+        public IActionResult GetDivisionByDepartment(string id)
+        {
+            //client.DefaultRequestHeaders.Add("Authorization", HttpContext.Session.GetString("JWToken"));
+            IEnumerable<Division> divisions;
+            var restask = client.GetAsync("divisions/getDivisionByDepartment/" + id);
+            restask.Wait();
+            var result = restask.Result;
+            if (result.IsSuccessStatusCode)
+            {
+                var readTask = result.Content.ReadAsAsync<IEnumerable<Division>>();
+                readTask.Wait();
+                divisions = readTask.Result;
+            }
+            else
+            {
+                divisions = null;
+                ModelState.AddModelError(string.Empty, "Error Load Divisions");
+            }
+            return Json(divisions);
         }
     }
 }

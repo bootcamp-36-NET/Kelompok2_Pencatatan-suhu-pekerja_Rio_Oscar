@@ -22,5 +22,11 @@ namespace PencatatanSuhuPekerjaAPI.Repositories.Data
             var data = await _context.Divisions.Include("Department").Where(D => D.IsDelete == false).ToListAsync();
             return data;
         }
+
+        public async Task<List<Division>> GetAllDivisionByDepartment(string id)
+        {
+            var data = await _context.Divisions.Where(D => D.IsDelete == false && D.DepartmentId == id).ToListAsync();
+            return data;
+        }
     }
 }

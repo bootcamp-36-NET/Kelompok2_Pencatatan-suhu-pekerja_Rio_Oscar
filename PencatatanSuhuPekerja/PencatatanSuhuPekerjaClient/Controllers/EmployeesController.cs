@@ -25,10 +25,10 @@ namespace PencatatanSuhuPekerjaClient.Controllers
         }
         public IActionResult LoadEmployee()
         {
-            IEnumerable<Employee> employees = null;
+            IEnumerable<EmployeeVM> employees = null;
 
-            var authToken = HttpContext.Session.GetString("JWToken");
-            client.DefaultRequestHeaders.Add("Authorization", authToken);
+            //var authToken = HttpContext.Session.GetString("JWToken");
+            //client.DefaultRequestHeaders.Add("Authorization", authToken);
 
             var resTask = client.GetAsync("Employees");
             resTask.Wait();
@@ -37,7 +37,7 @@ namespace PencatatanSuhuPekerjaClient.Controllers
 
             if (result.IsSuccessStatusCode)
             {
-                var readTask = result.Content.ReadAsAsync<IList<Employee>>();
+                var readTask = result.Content.ReadAsAsync<IList<EmployeeVM>>();
                 readTask.Wait();
                 employees = readTask.Result;
             }
@@ -91,8 +91,8 @@ namespace PencatatanSuhuPekerjaClient.Controllers
 
         public JsonResult Delete(string id)
         {
-            var authToken = HttpContext.Session.GetString("JWToken");
-            client.DefaultRequestHeaders.Add("Authorization", authToken);
+            //var authToken = HttpContext.Session.GetString("JWToken");
+            //client.DefaultRequestHeaders.Add("Authorization", authToken);
 
             var resTask = client.DeleteAsync("Employees/" + id);
             resTask.Wait();

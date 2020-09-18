@@ -2,7 +2,7 @@
 
 $(document).ready(function () {
     loadData();
-    //getDepartmentDropdown();
+    getDepartmentDropdown();
 });
 
 function loadData() {
@@ -16,24 +16,26 @@ function loadData() {
             dataSrc: "",
         },
         columns: [
-            { data: null },
-            { data: 'FirstName' },
+            {data: null },
+            {data: 'FirstName' },
             {data: "LastName"},
             {data: "Email"},
             {data: "UserName"},
             {data: "PhoneNumber"},
             {data: "Salary"},
-            {data: "Division.Name"},
-            {data: "Division.Department.Name"},
+            {data: "DivisionName"},
+            {data: "DepartmentName"},
             {
-                data: null,
-                render: function (data, type, row,meta) {
-                    return '<Button class="btn btn-warning" onclick="return GetById(' + meta.row + ')">Update</button>'
+                data: "id",
+                "render": function (data, type, row, meta) {
+                    //console.log(row);
+                    $('[data-toggle="tooltip"]').tooltip();
+                    return '<button class="btn btn-outline-warning btn-circle" data-placement="left" data-toggle="tooltip" data-animation="false" title="Edit" onclick="return GetById(' + meta.row + ')" ><i class="fa fa-lg fa-edit"></i></button>'
                         + '&nbsp;'
-                        + '<Button class="btn btn-danger" onclick="return Delete(' + meta.row + ')">Delete</button>'
+                        + '<button class="btn btn-outline-danger btn-circle" data-placement="right" data-toggle="tooltip" data-animation="false" title="Delete" onclick="return Delete(' + meta.row + ')" ><i class="fa fa-lg fa-times"></i></button>';
                 },
-                orderable: false,
-                searchable: false
+                "sortable": false,
+                "oderable":false
             }
         ],
         "columnDefs": [{
@@ -57,7 +59,7 @@ function getDepartmentDropdown() {
     departmentSelect.empty();
     $.ajax({
         type: "GET",
-        url: "/Departments/LoadDepartment",
+        url: "/Departments/LoadDepartments",
         dataType: "Json",
         data: "",
         success: function (results) {
@@ -77,12 +79,11 @@ function getDepartmentDropdown() {
     });
 };
 
-function getDepartmentFilter() {
-    var departmentSelect = $('#DepartmentFilter');
-    departmentSelect.empty();
+function getDivisionDropDown() {
+    Id = $('#DepartOption').val();
     $.ajax({
         type: "GET",
-        url: "/Departments/LoadDepartment",
+        url: "/Divisions/GetDivisionByDepartment/" + Id,
         dataType: "Json",
         data: "",
         success: function (results) {
@@ -115,7 +116,7 @@ function Delete(index) {
     }).then((result) => {
         if (result.value) {
             $.ajax({
-                url: "/Divisions/Delete/" + Id,
+                url: "/Employees/Delete/" + Id,
                 type: "POST",
                 dataType: "JSON"
             }).then((result) => {
@@ -141,7 +142,7 @@ function Delete(index) {
 function GetById(index) {
     var Id = table.row(index).data().Id;
     $.ajax({
-        url: "/Divisions/GetById/",
+        url: "/Employees/GetById/",
         data: { Id: Id }
     }).then((result) => {
         $('#Id').val(result.Id);
@@ -179,24 +180,6 @@ function Update() {
                 timer: 1500,
             })
             table.ajax.reload(null, false);
-        } else {
-            Swal.fire('Error', 'Failed to Update', 'error');
-            clearTextBox();
-        }
-    });
-}
-
-function filterDepartment() {
-    var selectedDepartment = $("DepartmentFilter").val();
-    $.ajax({
-        url: "/Divisions/FilteredData/" + selectedDepartment,
-        data: "",
-        type: "POST",
-        dataType: "Json"
-    }).then((result) => {
-        if (result.StatusCode == 200) {
-            table.loadData.
-                table.ajax.reload(null, false);
         } else {
             Swal.fire('Error', 'Failed to Update', 'error');
             clearTextBox();

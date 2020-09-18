@@ -47,9 +47,28 @@ namespace PencatatanSuhuPekerjaAPI.Repositories
             return user;
         }
 
-        public async Task<List<Employee>> GetAllEmployee()
+        public async Task<List<EmployeeVM>> GetAllEmployee()
         {
-            var employees = await _myContext.Employees.Include(emp => emp.Division).ThenInclude(div => div.Department).ToListAsync();
+            var employees = await _myContext.Users
+                .Include("Employee")
+                .Include(u => u.Employee.Division).ThenInclude(div => div.Department)
+                .Where(q=>q.Employee.IsActive != false)
+                .Select(q=> new EmployeeVM()
+                {
+                    Id = q.Id,
+                    FirstName = q.Employee.FirstName,
+                    LastName = q.Employee.LastName,
+                    Email = q.Email,
+                    DepartmentName = q.Employee.Division.Department.Name,
+                    DepartmentId = q.Employee.Division.Department.Id,
+                    DivisionName = q.Employee.Division.Name,
+                    DivisionId = q.Employee.Division.Id,
+                    PhoneNumber = q.PhoneNumber,
+                    UserName = q.UserName,
+                    Salary = q.Employee.Salary 
+                })
+                .ToListAsync();
+
             return employees;
         }
 
@@ -88,8 +107,6 @@ namespace PencatatanSuhuPekerjaAPI.Repositories
 
         public async Task<string> DeactivateEmpoyee(string id)
         {
-            var errMessage = "";
-
             var existEmployee = await _myContext.Employees.Where(q => q.EmployeeId == id).FirstOrDefaultAsync();
 
             existEmployee.IsActive = false;
@@ -97,10 +114,9 @@ namespace PencatatanSuhuPekerjaAPI.Repositories
             var result = await _myContext.SaveChangesAsync();
             if (result == 0)
             {
-                errMessage = "Server error !";
-                return errMessage;
+                return "Server error !";
             }
-            return errMessage;
+            return null;
         }
     }
 }
