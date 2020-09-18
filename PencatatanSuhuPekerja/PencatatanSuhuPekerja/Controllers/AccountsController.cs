@@ -14,7 +14,6 @@ namespace PencatatanSuhuPekerjaAPI.Controllers
     [ApiController]
     public class AccountsController : ControllerBase
     {
-
         private readonly AccountRepository _accountRepository;
 
         public AccountsController(AccountRepository accountRepository)
@@ -83,9 +82,9 @@ namespace PencatatanSuhuPekerjaAPI.Controllers
 
         // PUT: Accounts/ChangePassword/{id}
         [HttpPut("ChangePassword/{id}")]
-        public async Task<ActionResult> ChangePassowrd(string id, ChangePassowordVM changePassowordVM)
+        public async Task<ActionResult> ChangePassoword(string id, ChangePasswordVM changePasswordVM)
         {
-            var result = await _accountRepository.ChangePassword(id, changePassowordVM);
+            var result = await _accountRepository.ChangePassword(id, changePasswordVM);
             if (result != null)
             {
                 return BadRequest(result);

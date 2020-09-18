@@ -26,7 +26,7 @@ namespace PencatatanSuhuPekerjaAPI.Repositories
                 .Include("UserRole")
                 .Include(emp => emp.Employee.Division).ThenInclude(div => div.Department)
                 .Where(q => q.Id == id)
-                .Select(q=> new UserProfileVM()
+                .Select(q => new UserProfileVM()
                 {
                     FirstName = q.Employee.FirstName,
                     LastName = q.Employee.LastName,
@@ -34,7 +34,7 @@ namespace PencatatanSuhuPekerjaAPI.Repositories
                     Department = q.Employee.Division.Department.Name,
                     Division = q.Employee.Division.Name,
                     PhoneNumber = q.PhoneNumber,
-                    UserName =q.UserName
+                    UserName = q.UserName
                 })
                 .FirstOrDefaultAsync();
 
@@ -49,7 +49,7 @@ namespace PencatatanSuhuPekerjaAPI.Repositories
 
         public async Task<List<Employee>> GetAllEmployee()
         {
-            var employees = await _myContext.Employees.Include("Division").ToListAsync();
+            var employees = await _myContext.Employees.Include(emp => emp.Division).ThenInclude(div => div.Department).ToListAsync();
             return employees;
         }
 

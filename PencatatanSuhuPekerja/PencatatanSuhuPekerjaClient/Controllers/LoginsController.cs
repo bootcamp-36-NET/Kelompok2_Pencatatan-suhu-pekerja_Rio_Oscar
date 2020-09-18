@@ -52,57 +52,6 @@ namespace PencatatanSuhuPekerjaClient.Controllers
             return Json((result, responseData), new Newtonsoft.Json.JsonSerializerSettings());
         }
 
-        [HttpGet]
-        // GET: Edit
-        public ActionResult Edit()
-        {
-            return View("Edit");
-        }
-
-        //public ActionResult GetEdit()
-        //{
-        //    var id = HttpContext.Session.GetString("id");
-        //    UserEditViewModel userEditViewModel = null;
-
-        //    var resTask = client.GetAsync("Users/Edit/" + id);
-        //    resTask.Wait();
-
-        //    var result = resTask.Result;
-        //    if (result.IsSuccessStatusCode)
-        //    {
-        //        var readTask = result.Content.ReadAsAsync<UserEditViewModel>();
-        //        readTask.Wait();
-
-        //        userEditViewModel = readTask.Result;
-        //    }
-        //    var response = Tuple.Create(userEditViewModel, result);
-
-        //    return Json(response, new Newtonsoft.Json.JsonSerializerSettings());
-        //}
-
-        //[HttpPost]
-        //public IActionResult Edit(UserEditViewModel userEditViewModel)
-        //{
-        //    UserViewModel account = null;
-        //    var id = HttpContext.Session.GetString("id");
-
-        //    string stringData = JsonConvert.SerializeObject(userEditViewModel);
-        //    var contentData = new StringContent(stringData, System.Text.Encoding.UTF8, "application/json");
-        //    var resTask = client.PutAsync("Users/Edit/" + id, contentData);
-
-        //    var result = resTask.Result;
-        //    if (result.IsSuccessStatusCode)
-        //    {
-        //        var data = result.Content.ReadAsStringAsync().Result;
-        //        var json = JsonConvert.DeserializeObject(data).ToString();
-        //        account = JsonConvert.DeserializeObject<UserViewModel>(json);
-
-        //        HttpContext.Session.SetString("uname", account.UserName);
-        //    }
-        //    var response = Tuple.Create(account, result);
-        //    return Json(response, new Newtonsoft.Json.JsonSerializerSettings());
-        //}
-
         public IActionResult Logout()
         {
             HttpContext.Session.Clear();

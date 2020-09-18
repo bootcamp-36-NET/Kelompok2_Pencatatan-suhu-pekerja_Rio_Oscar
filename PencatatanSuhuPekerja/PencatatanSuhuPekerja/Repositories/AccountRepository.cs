@@ -110,48 +110,18 @@ namespace PencatatanSuhuPekerjaAPI.Repositories
             return null;
         }
 
-        //public async Task<string> AddEmployee(Employee employee)
-        //{
-        //    var isExist = await _myContext.Employees.Where(q => q.PhoneNumber == employee.PhoneNumber).AnyAsync();
-        //    if (isExist)
-        //    {
-        //        return "Phone Number already registered !";
-        //    }
-
-        //    Employee newEmployee = new Employee()
-        //    {
-        //        EmployeeId = Guid.NewGuid().ToString(),
-        //        FirstName = employee.FirstName,
-        //        LastName = employee.LastName,
-        //        Salary = employee.Salary,
-        //        PhoneNumber = employee.PhoneNumber,
-        //        IsActive = true,
-        //        DivisionId = employee.DivisionId
-        //    };
-
-        //    _myContext.Employees.Add(newEmployee);
-        //    var result = await _myContext.SaveChangesAsync();
-        //    if (result == 0)
-        //    {
-        //        return "Server Error !";
-        //    }
-
-        //    return null;
-        //}
-
-
         //Edit User Profile
         public async Task<string> EditProfile(string id, EditEmployeeVM employee)
         {
-            var isPhoneNumberExist = await _myContext.Employees.Where(q => q.PhoneNumber == employee.PhoneNumber).AnyAsync();
+            var previousdata = await _myContext.Users.Where(q => q.Id == id).FirstOrDefaultAsync();
+            var isPhoneNumberExist = await _myContext.Employees.Where(q => q.PhoneNumber == employee.PhoneNumber && q.PhoneNumber != previousdata.PhoneNumber).AnyAsync();
             if (isPhoneNumberExist)
             {
                 return "Phone Number already registered !";
             }
-
             var isEmailExist = await _myContext.Employees
                         .Include("User")
-                        .Where(q => q.User.Email == employee.Email)
+                        .Where(q => q.User.Email == employee.Email && q.User.Email != previousdata.Email)
                         .AnyAsync();
 
             if (isEmailExist)
@@ -161,7 +131,7 @@ namespace PencatatanSuhuPekerjaAPI.Repositories
 
             var isUserNameExist = await _myContext.Employees
                         .Include("User")
-                        .Where(q => q.User.UserName == employee.UserName)
+                        .Where(q => q.User.UserName == employee.UserName && q.User.UserName != previousdata.UserName)
                         .AnyAsync();
 
             if (isUserNameExist)
@@ -179,6 +149,7 @@ namespace PencatatanSuhuPekerjaAPI.Repositories
             existEmployee.PhoneNumber = employee.PhoneNumber;
 
             existEmployee.User.Email = employee.Email;
+            existEmployee.User.UserName = employee.UserName;
             existEmployee.User.PhoneNumber = employee.PhoneNumber;
             existEmployee.User.NormalizedEmail = employee.Email.ToUpper();
             existEmployee.User.NormalizedUserName = employee.UserName.ToUpper();
@@ -191,11 +162,11 @@ namespace PencatatanSuhuPekerjaAPI.Repositories
             return null;
         }
 
-        public async Task<string> ChangePassword(string id, ChangePassowordVM changePasswordVM)
+        public async Task<string> ChangePassword(string id, ChangePasswordVM changePasswordVM)
         {
             var existUser = await _myContext.Users.Where(q => q.Id == id).FirstOrDefaultAsync();
-            var isValid = BCrypt.Net.BCrypt.Verify(changePasswordVM.OldPassowrd, existUser.PasswordHash);
-            if (isValid)
+            var isValid = BCrypt.Net.BCrypt.Verify(changePasswordVM.OldPassword, existUser.PasswordHash);
+            if (!isValid)
             {
                 return "Old Passowrd is wrong !";
             }
@@ -216,7 +187,7 @@ namespace PencatatanSuhuPekerjaAPI.Repositories
             var existUser = await _myContext.Users.Where(Q => Q.Email == loginVM.Email || Q.UserName == loginVM.Email).FirstOrDefaultAsync();
             if (existUser == null)
             {
-                return ("User not registered !",null);
+                return ("User not registered !", null);
             }
 
             var isValid = BCrypt.Net.BCrypt.Verify(loginVM.Password, existUser.PasswordHash);
