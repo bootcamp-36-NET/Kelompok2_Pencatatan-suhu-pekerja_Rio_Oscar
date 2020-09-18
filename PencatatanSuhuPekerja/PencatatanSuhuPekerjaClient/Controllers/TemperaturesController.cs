@@ -110,5 +110,34 @@ namespace PencatatanSuhuPekerjaClient.Controllers
             }
             return BadRequest(500);
         }
+
+        public IActionResult LoadEmployee()
+        {
+            //if (HttpContext.Session.GetString("JWToken") != null)
+            //{
+            //client.DefaultRequestHeaders.Add("Authorization", HttpContext.Session.GetString("JWToken"));
+            IEnumerable<Employee> employees;
+            var restask = client.GetAsync("empployees");
+            restask.Wait();
+            var result = restask.Result;
+            if (result.IsSuccessStatusCode)
+            {
+                var readTask = result.Content.ReadAsAsync<List<Employee>>();
+                readTask.Wait();
+                employees = readTask.Result;
+            }
+            else
+            {
+                employees = Enumerable.Empty<Employee>();
+                ModelState.AddModelError(string.Empty, "Error Load Departments");
+            }
+            return Json(employees);
+            //}
+            //else
+            //{
+            //return Redirect("/error");
+            //}
+
+        }
     }
 }

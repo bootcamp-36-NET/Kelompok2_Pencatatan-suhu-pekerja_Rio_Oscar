@@ -66,3 +66,43 @@ C:\Users\Geraldy\source\repos\Kelompok2_Pencatatan-suhu-pekerja_Rio_Oscar\Pencat
 C:\Users\Geraldy\source\repos\Kelompok2_Pencatatan-suhu-pekerja_Rio_Oscar\PencatatanSuhuPekerja\PencatatanSuhuPekerjaClient\obj\Debug\netcoreapp2.1\Razor\Views\Logins\Index.g.cshtml.cs
 C:\Users\Geraldy\source\repos\Kelompok2_Pencatatan-suhu-pekerja_Rio_Oscar\PencatatanSuhuPekerja\PencatatanSuhuPekerjaClient\obj\Debug\netcoreapp2.1\Razor\Views\Verifies\Index.g.cshtml.cs
 C:\Users\Geraldy\source\repos\Kelompok2_Pencatatan-suhu-pekerja_Rio_Oscar\PencatatanSuhuPekerja\PencatatanSuhuPekerjaClient\obj\Debug\netcoreapp2.1\Razor\Views\Registers\Index.g.cshtml.cs
+E:\Rio\Tugas Bootcamp\V2\Kelompok4_Pencatatan-suhu-pekerja_Rio_Oscar\PencatatanSuhuPekerja\PencatatanSuhuPekerjaClient\bin\Debug\netcoreapp2.1\PencatatanSuhuPekerjaClient.deps.json
+E:\Rio\Tugas Bootcamp\V2\Kelompok4_Pencatatan-suhu-pekerja_Rio_Oscar\PencatatanSuhuPekerja\PencatatanSuhuPekerjaClient\bin\Debug\netcoreapp2.1\PencatatanSuhuPekerjaClient.runtimeconfig.json
+E:\Rio\Tugas Bootcamp\V2\Kelompok4_Pencatatan-suhu-pekerja_Rio_Oscar\PencatatanSuhuPekerja\PencatatanSuhuPekerjaClient\bin\Debug\netcoreapp2.1\PencatatanSuhuPekerjaClient.runtimeconfig.dev.json
+E:\Rio\Tugas Bootcamp\V2\Kelompok4_Pencatatan-suhu-pekerja_Rio_Oscar\PencatatanSuhuPekerja\PencatatanSuhuPekerjaClient\bin\Debug\netcoreapp2.1\PencatatanSuhuPekerjaClient.dll
+E:\Rio\Tugas Bootcamp\V2\Kelompok4_Pencatatan-suhu-pekerja_Rio_Oscar\PencatatanSuhuPekerja\PencatatanSuhuPekerjaClient\bin\Debug\netcoreapp2.1\PencatatanSuhuPekerjaClient.pdb
+E:\Rio\Tugas Bootcamp\V2\Kelompok4_Pencatatan-suhu-pekerja_Rio_Oscar\PencatatanSuhuPekerja\PencatatanSuhuPekerjaClient\bin\Debug\netcoreapp2.1\PencatatanSuhuPekerjaClient.Views.dll
+E:\Rio\Tugas Bootcamp\V2\Kelompok4_Pencatatan-suhu-pekerja_Rio_Oscar\PencatatanSuhuPekerja\PencatatanSuhuPekerjaClient\bin\Debug\netcoreapp2.1\PencatatanSuhuPekerjaClient.Views.pdb
+E:\Rio\Tugas Bootcamp\V2\Kelompok4_Pencatatan-suhu-pekerja_Rio_Oscar\PencatatanSuhuPekerja\PencatatanSuhuPekerjaClient\bin\Debug\netcoreapp2.1\PencatatanSuhuPekerjaAPI.dll
+E:\Rio\Tugas Bootcamp\V2\Kelompok4_Pencatatan-suhu-pekerja_Rio_Oscar\PencatatanSuhuPekerja\PencatatanSuhuPekerjaClient\bin\Debug\netcoreapp2.1\PencatatanSuhuPekerjaAPI.pdb
+E:\Rio\Tugas Bootcamp\V2\Kelompok4_Pencatatan-suhu-pekerja_Rio_Oscar\PencatatanSuhuPekerja\PencatatanSuhuPekerjaClient\obj\Debug\netcoreapp2.1\PencatatanSuhuPekerjaClient.csprojAssemblyReference.cache
+E:\Rio\Tugas Bootcamp\V2\Kelompok4_Pencatatan-suhu-pekerja_Rio_Oscar\PencatatanSuhuPekerja\PencatatanSuhuPekerjaClient\obj\Debug\netcoreapp2.1\PencatatanSuhuPekerjaClient.csproj.CoreCompileInputs.cache
+E:\Rio\Tugas Bootcamp\V2\Kelompok4_Pencatatan-suhu-pekerja_Rio_Oscar\PencatatanSuhuPekerja\PencatatanSuhuPekerjaClient\obj\Debug\netcoreapp2.1\PencatatanSuhuPekerjaClient.RazorAssemblyInfo.cache
+E:\Rio\Tugas Bootcamp\V2\Kelompok4_Pencatatan-suhu-pekerja_Rio_Oscar\PencatatanSuhuPekerja\PencatatanSuhuPekerjaClient\obj\Debug\netcoreapp2.1\PencatatanSuhuPekerjaClient.RazorAssemblyInfo.cs
+E:\Rio\Tugas Bootcamp\V2\Kelompok4_Pencatatan-suhu-pekerja_Rio_Oscar\PencatatanSuhuPekerja\PencatatanSuhuPekerjaClient\obj\Debug\netcoreapp2.1\PencatatanSuhuPekerjaClient.AssemblyInfoInputs.cache
+E:\Rio\Tugas Bootcamp\V2\Kelompok4_Pencatatan-suhu-pekerja_Rio_Oscar\PencatatanSuhuPekerja\PencatatanSuhuPekerjaClient\obj\Debug\netcoreapp2.1\PencatatanSuhuPekerjaClient.AssemblyInfo.cs
+E:\Rio\Tugas Bootcamp\V2\Kelompok4_Pencatatan-suhu-pekerja_Rio_Oscar\PencatatanSuhuPekerja\PencatatanSuhuPekerjaClient\obj\Debug\netcoreapp2.1\PencatatanSuhuPekerjaClient.TagHelpers.input.cache
+E:\Rio\Tugas Bootcamp\V2\Kelompok4_Pencatatan-suhu-pekerja_Rio_Oscar\PencatatanSuhuPekerja\PencatatanSuhuPekerjaClient\obj\Debug\netcoreapp2.1\PencatatanSuhuPekerjaClient.TagHelpers.output.cache
+E:\Rio\Tugas Bootcamp\V2\Kelompok4_Pencatatan-suhu-pekerja_Rio_Oscar\PencatatanSuhuPekerja\PencatatanSuhuPekerjaClient\obj\Debug\netcoreapp2.1\PencatatanSuhuPekerjaClient.RazorCoreGenerate.cache
+E:\Rio\Tugas Bootcamp\V2\Kelompok4_Pencatatan-suhu-pekerja_Rio_Oscar\PencatatanSuhuPekerja\PencatatanSuhuPekerjaClient\obj\Debug\netcoreapp2.1\Razor\Views\Departments\Index.g.cshtml.cs
+E:\Rio\Tugas Bootcamp\V2\Kelompok4_Pencatatan-suhu-pekerja_Rio_Oscar\PencatatanSuhuPekerja\PencatatanSuhuPekerjaClient\obj\Debug\netcoreapp2.1\Razor\Views\Divisions\Index.g.cshtml.cs
+E:\Rio\Tugas Bootcamp\V2\Kelompok4_Pencatatan-suhu-pekerja_Rio_Oscar\PencatatanSuhuPekerja\PencatatanSuhuPekerjaClient\obj\Debug\netcoreapp2.1\Razor\Views\Home\About.g.cshtml.cs
+E:\Rio\Tugas Bootcamp\V2\Kelompok4_Pencatatan-suhu-pekerja_Rio_Oscar\PencatatanSuhuPekerja\PencatatanSuhuPekerjaClient\obj\Debug\netcoreapp2.1\Razor\Views\Home\Contact.g.cshtml.cs
+E:\Rio\Tugas Bootcamp\V2\Kelompok4_Pencatatan-suhu-pekerja_Rio_Oscar\PencatatanSuhuPekerja\PencatatanSuhuPekerjaClient\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.g.cshtml.cs
+E:\Rio\Tugas Bootcamp\V2\Kelompok4_Pencatatan-suhu-pekerja_Rio_Oscar\PencatatanSuhuPekerja\PencatatanSuhuPekerjaClient\obj\Debug\netcoreapp2.1\Razor\Views\Home\Privacy.g.cshtml.cs
+E:\Rio\Tugas Bootcamp\V2\Kelompok4_Pencatatan-suhu-pekerja_Rio_Oscar\PencatatanSuhuPekerja\PencatatanSuhuPekerjaClient\obj\Debug\netcoreapp2.1\Razor\Views\Logins\Index.g.cshtml.cs
+E:\Rio\Tugas Bootcamp\V2\Kelompok4_Pencatatan-suhu-pekerja_Rio_Oscar\PencatatanSuhuPekerja\PencatatanSuhuPekerjaClient\obj\Debug\netcoreapp2.1\Razor\Views\Registers\Index.g.cshtml.cs
+E:\Rio\Tugas Bootcamp\V2\Kelompok4_Pencatatan-suhu-pekerja_Rio_Oscar\PencatatanSuhuPekerja\PencatatanSuhuPekerjaClient\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Error.g.cshtml.cs
+E:\Rio\Tugas Bootcamp\V2\Kelompok4_Pencatatan-suhu-pekerja_Rio_Oscar\PencatatanSuhuPekerja\PencatatanSuhuPekerjaClient\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_CookieConsentPartial.g.cshtml.cs
+E:\Rio\Tugas Bootcamp\V2\Kelompok4_Pencatatan-suhu-pekerja_Rio_Oscar\PencatatanSuhuPekerja\PencatatanSuhuPekerjaClient\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Layout.g.cshtml.cs
+E:\Rio\Tugas Bootcamp\V2\Kelompok4_Pencatatan-suhu-pekerja_Rio_Oscar\PencatatanSuhuPekerja\PencatatanSuhuPekerjaClient\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_ValidationScriptsPartial.g.cshtml.cs
+E:\Rio\Tugas Bootcamp\V2\Kelompok4_Pencatatan-suhu-pekerja_Rio_Oscar\PencatatanSuhuPekerja\PencatatanSuhuPekerjaClient\obj\Debug\netcoreapp2.1\Razor\Views\Temperatures\Index.g.cshtml.cs
+E:\Rio\Tugas Bootcamp\V2\Kelompok4_Pencatatan-suhu-pekerja_Rio_Oscar\PencatatanSuhuPekerja\PencatatanSuhuPekerjaClient\obj\Debug\netcoreapp2.1\Razor\Views\Verifies\Index.g.cshtml.cs
+E:\Rio\Tugas Bootcamp\V2\Kelompok4_Pencatatan-suhu-pekerja_Rio_Oscar\PencatatanSuhuPekerja\PencatatanSuhuPekerjaClient\obj\Debug\netcoreapp2.1\Razor\Views\_ViewImports.g.cshtml.cs
+E:\Rio\Tugas Bootcamp\V2\Kelompok4_Pencatatan-suhu-pekerja_Rio_Oscar\PencatatanSuhuPekerja\PencatatanSuhuPekerjaClient\obj\Debug\netcoreapp2.1\Razor\Views\_ViewStart.g.cshtml.cs
+E:\Rio\Tugas Bootcamp\V2\Kelompok4_Pencatatan-suhu-pekerja_Rio_Oscar\PencatatanSuhuPekerja\PencatatanSuhuPekerjaClient\obj\Debug\netcoreapp2.1\PencatatanSuhuPekerjaClient.RazorTargetAssemblyInfo.cache
+E:\Rio\Tugas Bootcamp\V2\Kelompok4_Pencatatan-suhu-pekerja_Rio_Oscar\PencatatanSuhuPekerja\PencatatanSuhuPekerjaClient\obj\Debug\netcoreapp2.1\PencatatanSuhuPekerjaClient.RazorTargetAssemblyInfo.cs
+E:\Rio\Tugas Bootcamp\V2\Kelompok4_Pencatatan-suhu-pekerja_Rio_Oscar\PencatatanSuhuPekerja\PencatatanSuhuPekerjaClient\obj\Debug\netcoreapp2.1\PencatatanSuhuPekerjaClient.Views.pdb
+E:\Rio\Tugas Bootcamp\V2\Kelompok4_Pencatatan-suhu-pekerja_Rio_Oscar\PencatatanSuhuPekerja\PencatatanSuhuPekerjaClient\obj\Debug\netcoreapp2.1\PencatatanSuhuPekerjaClient.csproj.CopyComplete
+E:\Rio\Tugas Bootcamp\V2\Kelompok4_Pencatatan-suhu-pekerja_Rio_Oscar\PencatatanSuhuPekerja\PencatatanSuhuPekerjaClient\obj\Debug\netcoreapp2.1\PencatatanSuhuPekerjaClient.dll
+E:\Rio\Tugas Bootcamp\V2\Kelompok4_Pencatatan-suhu-pekerja_Rio_Oscar\PencatatanSuhuPekerja\PencatatanSuhuPekerjaClient\obj\Debug\netcoreapp2.1\PencatatanSuhuPekerjaClient.pdb
