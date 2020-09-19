@@ -115,7 +115,7 @@ namespace PencatatanSuhuPekerjaClient.Controllers
         {
             //client.DefaultRequestHeaders.Add("Authorization", HttpContext.Session.GetString("JWToken"));
             IEnumerable<Division> divisions;
-            var restask = client.GetAsync("divisions/getDivisionByDepartment/" + id);
+            var restask = client.GetAsync("Divisions/getDivisionByDepartment/" + id);
             restask.Wait();
             var result = restask.Result;
             if (result.IsSuccessStatusCode)

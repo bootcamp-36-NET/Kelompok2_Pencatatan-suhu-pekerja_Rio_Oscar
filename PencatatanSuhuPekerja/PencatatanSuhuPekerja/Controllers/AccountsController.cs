@@ -21,6 +21,14 @@ namespace PencatatanSuhuPekerjaAPI.Controllers
             this._accountRepository = accountRepository;
         }
 
+        // GET: Accounts/{id}
+        [HttpGet("{id}")]
+        public async Task<ActionResult> GetUserById(string id)
+        {
+            var selectedEmployee = await _accountRepository.GetProfile(id);
+            return Ok(selectedEmployee);
+        }
+
         // POST: Accounts/
         [HttpPost]
         public async Task<ActionResult> Register(RegisterVM registerVM)
@@ -31,7 +39,7 @@ namespace PencatatanSuhuPekerjaAPI.Controllers
             }
 
             var result = await _accountRepository.Register(registerVM);
-            if(result != null)
+            if (result != null)
             {
                 return BadRequest(result);
             }
@@ -58,7 +66,7 @@ namespace PencatatanSuhuPekerjaAPI.Controllers
         [Route("verify/{id}")]
         public async Task<ActionResult> VerifyAccount(string id, [FromBody]string code)
         {
-            var result = await _accountRepository.Verify(id,code);
+            var result = await _accountRepository.Verify(id, code);
             if (result != null)
             {
                 return BadRequest(result);

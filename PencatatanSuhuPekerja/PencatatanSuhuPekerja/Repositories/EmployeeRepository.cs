@@ -19,22 +19,25 @@ namespace PencatatanSuhuPekerjaAPI.Repositories
             this._myContext = myContext;
         }
 
-        public async Task<UserProfileVM> GetProfile(string id)
+        public async Task<EmployeeVM> GetProfile(string id)
         {
-            var user = await _myContext.Users
+            var employee = await _myContext.Users
                 .Include("Employee")
                 .Include("UserRole")
                 .Include(emp => emp.Employee.Division).ThenInclude(div => div.Department)
                 .Where(q => q.Id == id)
-                .Select(q => new UserProfileVM()
+                .Select(q => new EmployeeVM()
                 {
                     FirstName = q.Employee.FirstName,
                     LastName = q.Employee.LastName,
                     Email = q.Email,
-                    Department = q.Employee.Division.Department.Name,
-                    Division = q.Employee.Division.Name,
+                    DepartmentName = q.Employee.Division.Department.Name,
+                    DivisionName = q.Employee.Division.Name,
+                    DivisionId = q.Employee.Division.Id,
+                    DepartmentId= q.Employee.Division.Id,
                     PhoneNumber = q.PhoneNumber,
-                    UserName = q.UserName
+                    UserName = q.UserName,
+                    Salary = q.Employee.Salary,
                 })
                 .FirstOrDefaultAsync();
 
@@ -42,9 +45,9 @@ namespace PencatatanSuhuPekerjaAPI.Repositories
             var role = await _myContext.Roles.Where(Q => userRole.Any(X => X == Q.Id)).ToListAsync();
             var roleNames = role.Select(Q => Q.Name).ToList();
 
-            user.Roles = roleNames;
+            employee.UserRoles = roleNames;
 
-            return user;
+            return employee;
         }
 
         public async Task<List<EmployeeVM>> GetAllEmployee()
@@ -75,8 +78,8 @@ namespace PencatatanSuhuPekerjaAPI.Repositories
         //Admin Edit other employee Profile
         public async Task<string> EditEmployee(string id, EditEmployeeVM employee)
         {
-
-            var isExist = await _myContext.Employees.Where(q => q.PhoneNumber == employee.PhoneNumber).AnyAsync();
+            var previousdata = await _myContext.Users.Where(q => q.Id == id).FirstOrDefaultAsync();
+            var isExist = await _myContext.Employees.Where(q => q.PhoneNumber == employee.PhoneNumber && previousdata.PhoneNumber != q.PhoneNumber).AnyAsync();
             if (isExist)
             {
                 return "Phone Number already registered !";

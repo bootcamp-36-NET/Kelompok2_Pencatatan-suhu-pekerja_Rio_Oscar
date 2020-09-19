@@ -128,7 +128,7 @@ using PencatatanSuhuPekerjaClient.Models;
             WriteLiteral("a-dismiss=\"modal\" aria-label=\"Close\">\r\n                        <span aria-hidden=\"true\">&times;</span>\r\n                    </button>\r\n                </div>\r\n                <div class=\"modal-body\">\r\n                    ");
             EndContext();
             BeginContext(3383, 791, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d84dd3b7905742ccbef544cc790894ba", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "468b0f901ede4d89a3c408fde90bea67", async() => {
                 BeginContext(3389, 778, true);
                 WriteLiteral(@"
                         <div class=""form-group"">
@@ -207,7 +207,7 @@ using PencatatanSuhuPekerjaClient.Models;
                 WriteLiteral("\r\n    ");
                 EndContext();
                 BeginContext(6175, 58, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6ca914a7223b4190b1a1394e689e280a", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "870b48d0fae44cccaa129d86024db973", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

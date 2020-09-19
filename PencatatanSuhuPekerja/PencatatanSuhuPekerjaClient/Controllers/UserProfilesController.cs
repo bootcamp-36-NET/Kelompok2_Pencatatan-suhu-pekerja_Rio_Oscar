@@ -30,7 +30,7 @@ namespace PencatatanSuhuPekerjaClient.Controllers
             var authToken = HttpContext.Session.GetString("JWToken");
             client.DefaultRequestHeaders.Add("Authorization", authToken);
 
-            var resTask = client.GetAsync("Employees/" + id);
+            var resTask = client.GetAsync("Accounts/" + id);
             resTask.Wait();
 
             var result = resTask.Result;

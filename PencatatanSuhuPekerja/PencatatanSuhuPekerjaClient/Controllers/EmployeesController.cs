@@ -47,10 +47,10 @@ namespace PencatatanSuhuPekerjaClient.Controllers
 
         public IActionResult GetById(string id)
         {
-            UserProfileVM employees = null;
+            EmployeeVM employees = null;
 
-            var authToken = HttpContext.Session.GetString("JWToken");
-            client.DefaultRequestHeaders.Add("Authorization", authToken);
+            //var authToken = HttpContext.Session.GetString("JWToken");
+            //client.DefaultRequestHeaders.Add("Authorization", authToken);
 
             var resTask = client.GetAsync("Employees/" + id);
             resTask.Wait();
@@ -58,7 +58,7 @@ namespace PencatatanSuhuPekerjaClient.Controllers
             var result = resTask.Result;
             if (result.IsSuccessStatusCode)
             {
-                var readTask = result.Content.ReadAsAsync<UserProfileVM>();
+                var readTask = result.Content.ReadAsAsync<EmployeeVM>();
                 readTask.Wait();
 
                 employees = readTask.Result;
@@ -68,23 +68,16 @@ namespace PencatatanSuhuPekerjaClient.Controllers
         }
         public IActionResult Edit(EditEmployeeVM editEmployeeVM)
         {
-            var id = HttpContext.Session.GetString("id");
-
             string stringData = JsonConvert.SerializeObject(editEmployeeVM);
             var contentData = new StringContent(stringData, System.Text.Encoding.UTF8, "application/json");
 
-            var authToken = HttpContext.Session.GetString("JWToken");
-            client.DefaultRequestHeaders.Add("Authorization", authToken);
+            //var authToken = HttpContext.Session.GetString("JWToken");
+            //client.DefaultRequestHeaders.Add("Authorization", authToken);
 
-            var resTask = client.PutAsync("Employees/" + id, contentData);
+            var resTask = client.PutAsync("Employees/" + editEmployeeVM.Id, contentData);
 
             var result = resTask.Result;
             var responseData = result.Content.ReadAsStringAsync().Result;
-
-            if (result.IsSuccessStatusCode)
-            {
-                HttpContext.Session.SetString("email", editEmployeeVM.Email);
-            }
 
             return Json((result, responseData), new Newtonsoft.Json.JsonSerializerSettings());
         }

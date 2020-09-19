@@ -25,6 +25,34 @@ namespace PencatatanSuhuPekerjaAPI.Repositories
             this._tokenService = tokenService;
         }
 
+        public async Task<UserProfileVM> GetProfile(string id)
+        {
+            var user = await _myContext.Users
+                .Include("Employee")
+                .Include("UserRole")
+                .Include(emp => emp.Employee.Division).ThenInclude(div => div.Department)
+                .Where(q => q.Id == id)
+                .Select(q => new UserProfileVM()
+                {
+                    FirstName = q.Employee.FirstName,
+                    LastName = q.Employee.LastName,
+                    Email = q.Email,
+                    Department = q.Employee.Division.Department.Name,
+                    Division = q.Employee.Division.Name,
+                    PhoneNumber = q.PhoneNumber,
+                    UserName = q.UserName
+                })
+                .FirstOrDefaultAsync();
+
+            var userRole = await _myContext.UserRoles.Where(Q => Q.UserId == id).Select(Q => Q.RoleId).ToListAsync();
+            var role = await _myContext.Roles.Where(Q => userRole.Any(X => X == Q.Id)).ToListAsync();
+            var roleNames = role.Select(Q => Q.Name).ToList();
+
+            user.Roles = roleNames;
+
+            return user;
+        }
+
         public async Task<string> Register(RegisterVM registerVM)
         {
             var isEmailExist = await _myContext.Users.Where(Q => Q.Email == registerVM.Email).AnyAsync();

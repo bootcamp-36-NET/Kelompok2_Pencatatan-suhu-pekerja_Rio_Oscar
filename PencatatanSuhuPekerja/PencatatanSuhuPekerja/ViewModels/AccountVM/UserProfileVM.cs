@@ -14,6 +14,7 @@ namespace PencatatanSuhuPekerjaAPI.ViewModels.AccountVM
         public string Division { get; set; }
         public string Department { get; set; }
         public string UserName { get; set; }
+        public int Salary { get; set; }
         public List<string> Roles { get; set; }
     }
 }

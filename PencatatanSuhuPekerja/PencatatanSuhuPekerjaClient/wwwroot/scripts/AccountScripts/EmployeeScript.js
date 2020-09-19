@@ -2,7 +2,6 @@
 
 $(document).ready(function () {
     loadData();
-    getDepartmentDropdown();
 });
 
 function loadData() {
@@ -55,7 +54,7 @@ function loadData() {
 }
 
 function getDepartmentDropdown() {
-    var departmentSelect = $('#Department');
+    var departmentSelect = $('#DepartOption');
     departmentSelect.empty();
     $.ajax({
         type: "GET",
@@ -69,7 +68,7 @@ function getDepartmentDropdown() {
                     text: "Choose..."
                 }));
                 $.each(results, function (index, result) {
-                    departmentSelect.append("<option value='" + result.Id + "'>" + result.Name + "</option>");
+                    departmentSelect.append("<option value='" + result.id + "'>" + result.name + "</option>");
                 });
             };
         },
@@ -80,6 +79,8 @@ function getDepartmentDropdown() {
 };
 
 function getDivisionDropDown() {
+    var divisionSelect = $('#DivisionOption');
+    divisionSelect.empty();
     Id = $('#DepartOption').val();
     $.ajax({
         type: "GET",
@@ -88,12 +89,12 @@ function getDivisionDropDown() {
         data: "",
         success: function (results) {
             if (results != null) {
-                departmentSelect.append($('<option/>', {
+                divisionSelect.append($('<option/>', {
                     value: "",
-                    text: ""
+                    text: "Choose..."
                 }));
                 $.each(results, function (index, result) {
-                    departmentSelect.append("<option value='" + result.Id + "'>" + result.Name + "</option>");
+                    divisionSelect.append("<option value='" + result.id + "'>" + result.name + "</option>");
                 });
             };
         },
@@ -141,17 +142,24 @@ function Delete(index) {
 
 function GetById(index) {
     var Id = table.row(index).data().Id;
+    getDepartmentDropdown();
     $.ajax({
         url: "/Employees/GetById/",
         data: { Id: Id }
     }).then((result) => {
-        $('#Id').val(result.Id);
-        $('#Name').val(result.Name);
-        $('#Department').val(result.DepartmentId);
-        $('#btnAdd').hide();
-        $('#btnUpdate').show();
         $('#myModal').modal('show');
-    })
+        $('#DepartOption').val(result.DepartmentId);
+        $('#Id').val(Id);
+        $('#FirstName').val(result.FirstName);
+        $('#LastName').val(result.LastName);
+        $('#UserName').val(result.UserName);
+        $('#Email').val(result.Email);
+        $('#PhoneNumber').val(result.PhoneNumber);
+        $('#Salary').val(result.Salary);
+        $('#DivisionOption').val(result.DivisionId);
+    }).then(result => {
+        getDivisionDropDown();
+    });
 }
 
 function Update() {
@@ -159,18 +167,23 @@ function Update() {
     if (check == false) {
         return false;
     }
-    var division = {
+    var editEmployeeVM = {
         Id: $('#Id').val(),
-        Name: $('#Name').val(),
-        DepartmentId: $('#Department').val()
+        FirstName: $('#FirstName').val(),
+        LastName: $('#LastName').val(),
+        UserName: $('#UserName').val(),
+        Email: $('#Email').val(),
+        Salary: $('#Salary').val(),
+        PhoneNumber: $('#PhoneNumber').val(),
+        DivisionId: $('#DivisionOption').val()
     };
     $.ajax({
-        url: "/Divisions/AddOrUpdate",
-        data: division,
+        url: "/Employees/Edit",
+        data: editEmployeeVM,
         type: "POST",
         dataType: "Json"
     }).then((result) => {
-        if (result.StatusCode == 200) {
+        if (result.Item1.StatusCode == 200) {
             $('#myModal').modal('hide');
             Swal.fire({
                 position: 'center',
@@ -190,28 +203,17 @@ function Update() {
 //Function for clearing the textboxes
 function clearTextBox() {
     departmentSelect.empty();
-    $('#Name').val("");
-    $('#btnUpdate').hide();
-    $('#btnAdd').show();
-    $('#Name').css('border-color', 'lightgrey');
+    divisionSelect.empty();
+    $('#Id').val("");
+    $('#FirstName').val("");
+    $('#LastName').val("");
+    $('#UserName').val("");
+    $('#Email').val("");
+    $('#PhoneNumber').val("");
 }
 
 function validate() {
     var isValid = true;
-    if ($('#Name').val().trim() == "") {
-        $('#Name').css('border-color', 'Red');
-        isValid = false;
-    }
-    else {
-        $('#Name').css('border-color', 'lightgrey');
-    }
-    if ($('#Department').val().trim() == "") {
-        $('#Department').css('border-color', 'Red');
-        isValid = false;
-    }
-    else {
-        $('#Department').css('border-color', 'lightgrey');
-    }
     return isValid;
 }
 

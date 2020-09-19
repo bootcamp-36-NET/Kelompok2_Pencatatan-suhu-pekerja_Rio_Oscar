@@ -39,7 +39,7 @@ namespace PencatatanSuhuPekerjaAPI.Controllers
         }
 
         [HttpGet]
-        [Route("/getDivisionByDepartment/{id}")]
+        [Route("getDivisionByDepartment/{id}")]
         public async Task<IEnumerable<Division>> GetDivisionByDepartment(string id)
         {
             var divisions = await _division.GetAllDivisionByDepartment(id);
