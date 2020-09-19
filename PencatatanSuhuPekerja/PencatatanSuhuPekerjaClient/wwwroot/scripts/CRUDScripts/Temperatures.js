@@ -1,5 +1,5 @@
 ﻿var table = null;
-var arrDepart = [];
+var ArrayEmployee = [];
 
 $(document).ready(function () {
     debugger;
@@ -105,7 +105,7 @@ $(document).ready(function () {
 });
 
 function Delete(nummber) {
-    var id = table.row(nummber).data().id;
+    var id = table.row(nummber).data().temperatureId;
     Swal.fire({
         title: 'Are you sure?',
         text: "You won't be able to revert this!",
@@ -117,7 +117,7 @@ function Delete(nummber) {
         debugger;
         if (result.value) {
             $.ajax({
-                url: "/Divisions/DeleteDivision/",
+                url: "/Temperatures/DeleteTemperature/",
                 data: { Id: id }
             }).then((result) => {
                 debugger;
@@ -140,16 +140,16 @@ function Delete(nummber) {
 }
 
 function GetById(nummber) {
-    var id = table.row(nummber).data().id;
+    var id = table.row(nummber).data().temperatureId;
     debugger;
     $.ajax({
-        url: "/Divisions/GetDivision/",
+        url: "/Temperatures/GetTemperatures/",
         data: { id: id }
     }).then((result) => {
         debugger;
-        $('#Id').val(result.id);
-        $('#Name').val(result.name);
-        $('#DepartOption').val(result.departmentId);
+        $('#Id').val(result.temperatureId);
+        $('#Name').val(result.employeeTemperature);
+        $('#DepartOption').val(result.employeeId);
         $('#Insert').hide();
         $('#Update').show();
         $('#exampleModal').modal('show');
@@ -157,15 +157,15 @@ function GetById(nummber) {
 }
 
 
-function LoadDepart(element) {
+function LoadEmployee(element) {
     //debugger;
-    if (arrDepart.length === 0) {
+    if (ArrayEmployee.length === 0) {
         $.ajax({
             type: "Get",
-            url: "/Departments/LoadDepartments",
+            url: "/employees/loademployee",
             success: function (data) {
                 arrDepart = data;
-                renderDepart(element);
+                RenderEmployee(element);
             }
         });
     }
@@ -174,16 +174,16 @@ function LoadDepart(element) {
     }
 }
 
-function renderDepart(element) {
+function RenderEmployee(element) {
     var $option = $(element);
     $option.empty();
-    $option.append($('<option/>').val('0').text('Select Department').hide());
+    $option.append($('<option/>').val('0').text('Select Employee').hide());
     $.each(arrDepart, function (i, val) {
-        $option.append($('<option/>').val(val.id).text(val.name));
+        $option.append($('<option/>').val(val.Id).text(val.FirstName));
     });
 }
 
-LoadDepart($('#DepartOption'));
+LoadEmployee($('#DepartOption'));
 
 function ClearScreen() {
     $('#Id').val('');
@@ -194,16 +194,16 @@ function ClearScreen() {
 
 function Save() {
     debugger;
-    var Div = new Object();
-    Div.Id = null;
-    Div.Name = $('#Name').val();
-    Div.departmentId = $('#DepartOption').val();
+    var Tmp = new Object();
+    Tmp.temperatureId = null;
+    Tmp.employeeTemperature = $('#Name').val();
+    Tmp.employeeId = $('#DepartOption').val();
     $.ajax({
         type: 'POST',
-        url: "/divisions/InsertOrUpdateDivision/",
+        url: "/Temperatures/InsertOrUpdateTemperature/",
         cache: false,
         dataType: "JSON",
-        data: Div
+        data: Tmp
     }).then((result) => {
         debugger;
         if (result === 200) {
@@ -224,16 +224,16 @@ function Save() {
 
 function Update() {
     debugger;
-    var Div = new Object();
-    Div.Id = $('#Id').val();
-    Div.Name = $('#Name').val();
-    Div.departmentId = $('#DepartOption').val();
+    var Tmp = new Object();
+    Tmp.temperatureId = $('#Id').val();
+    Tmp.employeeTemperature = $('#Name').val();
+    Tmp.employeeId = $('#DepartOption').val();
     $.ajax({
         type: 'POST',
-        url: "/divisions/InsertOrUpdateDivision/",
+        url: "/Temperatures/InsertOrUpdateTemperature/",
         cache: false,
         dataType: "JSON",
-        data: Div
+        data: Tmp
     }).then((result) => {
         debugger;
         if (result === 200) {

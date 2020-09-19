@@ -71,11 +71,12 @@ namespace PencatatanSuhuPekerjaClient.Controllers
             return Json(temperature);
         }
 
-        public IActionResult InsertOrUpdateDivision(string id, Temperature temperature)
+        public IActionResult InsertOrUpdateTemperature(string id, Temperature temperature)
         {
             try
             {
                 //client.DefaultRequestHeaders.Add("Authorization", HttpContext.Session.GetString("token"));
+                id = temperature.TemperatureId;
                 var json = JsonConvert.SerializeObject(temperature);
                 var buffer = System.Text.Encoding.UTF8.GetBytes(json);
                 var byteContent = new ByteArrayContent(buffer);
@@ -86,7 +87,7 @@ namespace PencatatanSuhuPekerjaClient.Controllers
                     var result = client.PostAsync("temperatures", byteContent).Result;
                     return Ok(200);
                 }
-                else if (temperature.TemperatureId == id)
+                else if (temperature.TemperatureId != null)
                 {
                     var result = client.PutAsync("temperatures/" + id, byteContent).Result;
                     return Ok(200);
@@ -111,33 +112,6 @@ namespace PencatatanSuhuPekerjaClient.Controllers
             return BadRequest(500);
         }
 
-        public IActionResult LoadEmployee()
-        {
-            //if (HttpContext.Session.GetString("JWToken") != null)
-            //{
-            //client.DefaultRequestHeaders.Add("Authorization", HttpContext.Session.GetString("JWToken"));
-            IEnumerable<Employee> employees;
-            var restask = client.GetAsync("empployees");
-            restask.Wait();
-            var result = restask.Result;
-            if (result.IsSuccessStatusCode)
-            {
-                var readTask = result.Content.ReadAsAsync<List<Employee>>();
-                readTask.Wait();
-                employees = readTask.Result;
-            }
-            else
-            {
-                employees = Enumerable.Empty<Employee>();
-                ModelState.AddModelError(string.Empty, "Error Load Departments");
-            }
-            return Json(employees);
-            //}
-            //else
-            //{
-            //return Redirect("/error");
-            //}
-
-        }
+ 
     }
 }
