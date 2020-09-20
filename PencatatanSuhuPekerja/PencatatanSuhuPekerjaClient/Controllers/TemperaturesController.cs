@@ -26,33 +26,33 @@ namespace PencatatanSuhuPekerjaClient.Controllers
         {
             //if (HttpContext.Session.GetString("JWToken") != null)
             //{
-                //client.DefaultRequestHeaders.Add("Authorization", HttpContext.Session.GetString("JWToken"));
-                IEnumerable<Temperature> temperatures;
-                var restask = client.GetAsync("temperatures");
-                restask.Wait();
-                var result = restask.Result;
-                if (result.IsSuccessStatusCode)
-                {
-                    var readTask = result.Content.ReadAsAsync<List<Temperature>>();
-                    readTask.Wait();
-                    temperatures = readTask.Result;
-                }
-                else
-                {
-                    temperatures = Enumerable.Empty<Temperature>();
-                    ModelState.AddModelError(string.Empty, "Error Load Departments");
-                }
-                return Json(temperatures);
+            client.DefaultRequestHeaders.Add("Authorization", HttpContext.Session.GetString("JWToken"));
+            IEnumerable<Temperature> temperatures;
+            var restask = client.GetAsync("temperatures");
+            restask.Wait();
+            var result = restask.Result;
+            if (result.IsSuccessStatusCode)
+            {
+                var readTask = result.Content.ReadAsAsync<List<Temperature>>();
+                readTask.Wait();
+                temperatures = readTask.Result;
+            }
+            else
+            {
+                temperatures = Enumerable.Empty<Temperature>();
+                ModelState.AddModelError(string.Empty, "Error Load Departments");
+            }
+            return Json(temperatures);
             //}
             //else
             //{
-                //return Redirect("/error");
+            //return Redirect("/error");
             //}
 
         }
         public IActionResult GetTemperatures(string id)
         {
-            //client.DefaultRequestHeaders.Add("Authorization", HttpContext.Session.GetString("token"));
+            client.DefaultRequestHeaders.Add("Authorization", HttpContext.Session.GetString("JWToken"));
             Temperature temperature;
             var restask = client.GetAsync("temperatures/" + id);
             restask.Wait();
@@ -75,7 +75,7 @@ namespace PencatatanSuhuPekerjaClient.Controllers
         {
             try
             {
-                //client.DefaultRequestHeaders.Add("Authorization", HttpContext.Session.GetString("token"));
+                client.DefaultRequestHeaders.Add("Authorization", HttpContext.Session.GetString("JWToken"));
                 id = temperature.TemperatureId;
                 var json = JsonConvert.SerializeObject(temperature);
                 var buffer = System.Text.Encoding.UTF8.GetBytes(json);
@@ -103,7 +103,7 @@ namespace PencatatanSuhuPekerjaClient.Controllers
 
         public IActionResult DeleteTemperature(string id)
         {
-            //client.DefaultRequestHeaders.Add("Authorization", HttpContext.Session.GetString("token"));
+            client.DefaultRequestHeaders.Add("Authorization", HttpContext.Session.GetString("JWToken"));
             var result = client.DeleteAsync("temperatures/" + id).Result;
             if (result.IsSuccessStatusCode)
             {
@@ -112,6 +112,6 @@ namespace PencatatanSuhuPekerjaClient.Controllers
             return BadRequest(500);
         }
 
- 
+
     }
 }

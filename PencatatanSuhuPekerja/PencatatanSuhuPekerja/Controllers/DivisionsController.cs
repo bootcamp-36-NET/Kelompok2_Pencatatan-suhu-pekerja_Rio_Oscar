@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PencatatanSuhuPekerjaAPI.Base;
@@ -11,6 +12,7 @@ using PencatatanSuhuPekerjaAPI.Repositories.Data;
 
 namespace PencatatanSuhuPekerjaAPI.Controllers
 {
+    [Authorize(AuthenticationSchemes = "Bearer")]
     [Route("api/[controller]")]
     [ApiController]
     public class DivisionsController : BaseController<Division, DivisionRepository>

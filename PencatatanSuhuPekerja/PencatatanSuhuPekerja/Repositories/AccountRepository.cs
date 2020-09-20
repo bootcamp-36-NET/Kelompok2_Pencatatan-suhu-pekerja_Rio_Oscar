@@ -196,7 +196,7 @@ namespace PencatatanSuhuPekerjaAPI.Repositories
             var isValid = BCrypt.Net.BCrypt.Verify(changePasswordVM.OldPassword, existUser.PasswordHash);
             if (!isValid)
             {
-                return "Old Passowrd is wrong !";
+                return "Old Passoword is wrong !";
             }
 
             var hashedPassword = BCrypt.Net.BCrypt.HashPassword(changePasswordVM.NewPassword, 12);

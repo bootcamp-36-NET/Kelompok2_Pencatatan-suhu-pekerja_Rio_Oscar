@@ -10,7 +10,7 @@ using PencatatanSuhuPekerjaAPI.ViewModels.EmployeeVM;
 
 namespace PencatatanSuhuPekerjaAPI.Controllers
 {
-    //[Authorize(AuthenticationSchemes = "Bearer")]
+    [Authorize(AuthenticationSchemes = "Bearer")]
     [Route("api/[controller]")]
     [ApiController]
     public class EmployeesController : ControllerBase

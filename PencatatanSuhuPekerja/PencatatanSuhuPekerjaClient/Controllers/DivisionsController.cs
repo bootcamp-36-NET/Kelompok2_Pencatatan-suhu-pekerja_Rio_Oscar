@@ -26,33 +26,33 @@ namespace PencatatanSuhuPekerjaClient.Controllers
         {
             //if (HttpContext.Session.GetString("JWToken") != null)
             //{
-                //client.DefaultRequestHeaders.Add("Authorization", HttpContext.Session.GetString("JWToken"));
-                IEnumerable<Division> divisions;
-                var restask = client.GetAsync("divisions");
-                restask.Wait();
-                var result = restask.Result;
-                if (result.IsSuccessStatusCode)
-                {
-                    var readTask = result.Content.ReadAsAsync<List<Division>>();
-                    readTask.Wait();
-                    divisions = readTask.Result;
-                }
-                else
-                {
-                    divisions = Enumerable.Empty<Division>();
-                    ModelState.AddModelError(string.Empty, "Error Load Departments");
-                }
-                return Json(divisions);
+            client.DefaultRequestHeaders.Add("Authorization", HttpContext.Session.GetString("JWToken"));
+            IEnumerable<Division> divisions;
+            var restask = client.GetAsync("divisions");
+            restask.Wait();
+            var result = restask.Result;
+            if (result.IsSuccessStatusCode)
+            {
+                var readTask = result.Content.ReadAsAsync<List<Division>>();
+                readTask.Wait();
+                divisions = readTask.Result;
+            }
+            else
+            {
+                divisions = Enumerable.Empty<Division>();
+                ModelState.AddModelError(string.Empty, "Error Load Departments");
+            }
+            return Json(divisions);
             //}
             //else
             //{
-                //return Redirect("/error");
+            //return Redirect("/error");
             //}
 
         }
         public IActionResult GetDivision(string id)
         {
-            //client.DefaultRequestHeaders.Add("Authorization", HttpContext.Session.GetString("JWToken"));
+            client.DefaultRequestHeaders.Add("Authorization", HttpContext.Session.GetString("JWToken"));
             Division division;
             var restask = client.GetAsync("divisions/" + id);
             restask.Wait();
@@ -75,7 +75,7 @@ namespace PencatatanSuhuPekerjaClient.Controllers
         {
             try
             {
-                //client.DefaultRequestHeaders.Add("Authorization", HttpContext.Session.GetString("JWToken"));
+                client.DefaultRequestHeaders.Add("Authorization", HttpContext.Session.GetString("JWToken"));
                 var json = JsonConvert.SerializeObject(division);
                 var buffer = System.Text.Encoding.UTF8.GetBytes(json);
                 var byteContent = new ByteArrayContent(buffer);
@@ -102,7 +102,7 @@ namespace PencatatanSuhuPekerjaClient.Controllers
 
         public IActionResult DeleteDivision(string id)
         {
-            //client.DefaultRequestHeaders.Add("Authorization", HttpContext.Session.GetString("JWToken"));
+            client.DefaultRequestHeaders.Add("Authorization", HttpContext.Session.GetString("JWToken"));
             var result = client.DeleteAsync("divisions/" + id).Result;
             if (result.IsSuccessStatusCode)
             {
@@ -113,7 +113,7 @@ namespace PencatatanSuhuPekerjaClient.Controllers
 
         public IActionResult GetDivisionByDepartment(string id)
         {
-            //client.DefaultRequestHeaders.Add("Authorization", HttpContext.Session.GetString("JWToken"));
+            client.DefaultRequestHeaders.Add("Authorization", HttpContext.Session.GetString("JWToken"));
             IEnumerable<Division> divisions;
             var restask = client.GetAsync("Divisions/getDivisionByDepartment/" + id);
             restask.Wait();

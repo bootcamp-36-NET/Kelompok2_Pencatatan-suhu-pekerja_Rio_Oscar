@@ -25,7 +25,7 @@
 <body>
     <!-- Main content -->
     <div class="main-content" id="panel">
-        <div class="header pb-6 d-flex align-items-center" style="min-height: 500px; background-image: url(../assets/img/theme/profile-cover.jpg); background-size: cover; background-position: center top;">
+        <div class="header pb-6 d-flex align-items-center" style="min-height: 500px; background-size: cover; background-position: center top;">
             <!-- Mask -->
             <span class="mask bg-gradient-default opacity-8"></span>
             <!-- Header container -->
@@ -51,15 +51,10 @@
             </div>
         </div>
     </div>
-    <!-- Argon Scripts -->
-    <!-- Core -->
-    <script src="~/vendor/jquery/dist/jquery.min.js"></script>
-    <script src="~/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/vendor/js-cookie/js.cookie.js"></script>
-    <script src="~/vendor/jquery.scrollbar/jquery.scrollbar.min.js"></script>
-    <script src="~/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js"></script>
-    <!-- Argon JS -->
-    <script src="~/js/argon.js?v=1.2.0"></script>
+</body>
+</html>
+
+@section script{
     <!--Chart-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" integrity="sha512-s+xg36jbIujB2S2VKfpGmlC3T5V2TF3lY48DX7u2r9XzGzgPsa6wTpOQA7J9iffvdeBN0q9tKzRxVxw1JviZPg==" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.js" integrity="sha512-G8JE1Xbr0egZE5gNGyUm1fF764iHVfRXshIoUWCTPAbKkkItp/6qal5YAHXrxEu4HNfPTQs6HOu3D5vCGS1j3w==" crossorigin="anonymous"></script>
@@ -67,8 +62,4 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js" integrity="sha512-QEiC894KVkN9Tsoi6+mKf8HaCLJvyA6QIRzY5KrfINXYuP9NxdIkRQhGq3BZi0J4I7V5SidGM3XUQ5wFiMDuWg==" crossorigin="anonymous"></script>
     <!--AJAX-->
     <script src="~/scripts/DashboardScript.js"></script>
-</body>
-</html>
-
-
-
+}

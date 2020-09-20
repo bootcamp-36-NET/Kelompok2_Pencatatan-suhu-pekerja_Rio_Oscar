@@ -4,6 +4,7 @@
 function Register() {
     var check = validate();
     if (check == false) {
+        swal.fire('error', 'invalid Input', 'error');
         return false;
     }
     var registerVM = {
@@ -22,9 +23,16 @@ function Register() {
         dataType: "JSON"
     }).then((result) => {
         if (result.Item1.StatusCode == 200) {
+            Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'Successfully Registered !',
+                showConfirmButton: false,
+                timer: 1500
+            });
             window.location.href = "/logins";
         } else {
-            alertify.error(result.Item2);
+            swal.fire('error', result.Item2, 'error');
         }
     });
 }
@@ -33,7 +41,6 @@ function validate() {
     var isValid = true;
     if ($('#FirstName').val().trim() == "") {
         $('#FirstName').css('border-color', 'Red');
-        alertify.error('First Name Cannot Empty');
         isValid = false;
     }
     else {
@@ -41,7 +48,6 @@ function validate() {
     }
     if ($('#LastName').val().trim() == "") {
         $('#LastName').css('border-color', 'Red');
-        alertify.error('Last Name Cannot Empty');
         isValid = false;
     }
     else {
@@ -49,7 +55,6 @@ function validate() {
     }
     if ($('#UserName').val().trim() == "") {
         $('#UserName').css('border-color', 'Red');
-        alertify.error('User Name Number Cannot Empty');
         isValid = false;
     }
     else {
@@ -57,7 +62,6 @@ function validate() {
     }
     if ($('#Email').val().trim() == "") {
         $('#Email').css('border-color', 'Red');
-        alertify.error('Email Cannot Empty');
         isValid = false;
     }
     else {
@@ -65,7 +69,6 @@ function validate() {
     }
     if ($('#PhoneNumber').val().trim() == "") {
         $('#PhoneNumber').css('border-color', 'Red');
-        alertify.error('Phone Number Cannot Empty');
         isValid = false;
     }
     else {
@@ -73,7 +76,6 @@ function validate() {
     }
     if ($('#Password').val().trim() == "") {
         $('#Password').css('border-color', 'Red');
-        alertify.error('Password Cannot Empty');
         isValid = false;
     }
     else {
@@ -81,12 +83,10 @@ function validate() {
     }
     if ($('#ConfirmPassword').val().trim() == "") {
         $('#ConfirmPassword').css('border-color', 'Red');
-        alertify.error('Confirm Password must be same !');
         isValid = false;
     }
     else if ($('#ConfirmPassword').val().trim() != $('#Password').val().trim()) {
         $('#ConfirmPassword').css('border-color', 'Red');
-        alertify.error('Password and Confirm Password must be same !');
         isValid = false;
     }
     else {

@@ -45,9 +45,16 @@ function Edit() {
         dataType: "JSON"
     }).then((result) => {
         if (result.Item1.StatusCode == 200) {
+            Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'Successfully Edited !',
+                showConfirmButton: false,
+                timer: 1500
+            });
             window.location.href = "/UserProfiles";
         } else {
-            alertify.error(result.Item2);
+            swal.fire('error', result.Item2, 'error');
         }
     });
 }
@@ -56,7 +63,6 @@ function validate() {
     var isValid = true;
     if ($('#FirstName').val().trim() == "") {
         $('#FirstName').css('border-color', 'Red');
-        alertify.error('First Name Cannot Empty');
         isValid = false;
     }
     else {
@@ -64,7 +70,6 @@ function validate() {
     }
     if ($('#LastName').val().trim() == "") {
         $('#LastName').css('border-color', 'Red');
-        alertify.error('Last Name Cannot Empty');
         isValid = false;
     }
     else {
@@ -72,7 +77,6 @@ function validate() {
     }
     if ($('#UserName').val().trim() == "") {
         $('#UserName').css('border-color', 'Red');
-        alertify.error('User Name Number Cannot Empty');
         isValid = false;
     }
     else {
@@ -80,7 +84,6 @@ function validate() {
     }
     if ($('#Email').val().trim() == "") {
         $('#Email').css('border-color', 'Red');
-        alertify.error('Email Cannot Empty');
         isValid = false;
     }
     else {
@@ -88,8 +91,10 @@ function validate() {
     }
     if ($('#PhoneNumber').val().trim() == "") {
         $('#PhoneNumber').css('border-color', 'Red');
-        alertify.error('Phone Number Cannot Empty');
         isValid = false;
+    }
+    else {
+        $('#PhoneNumber').css('border-color', 'lightgrey');
     }
     return isValid;
 }

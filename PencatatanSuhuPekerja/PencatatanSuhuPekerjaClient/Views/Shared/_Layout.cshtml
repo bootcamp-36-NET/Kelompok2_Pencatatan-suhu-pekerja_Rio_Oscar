@@ -1,18 +1,18 @@
-﻿<!--
-=========================================================
-* Argon Dashboard - v1.2.0
-=========================================================
-* Product Page: https://www.creative-tim.com/product/argon-dashboard
+﻿@using Microsoft.AspNetCore.Http
 
+@{
+    var isAdmin = false;
+    var isSecurity = false;
+    if (Context.Session.IsAvailable)
+    {
+        var stringRole = Context.Session.GetString("roles");
+        var roles = stringRole.Split(',').ToList();
+        isAdmin = roles.Where(Q => Q == "ADMIN").Any();
+        isSecurity = roles.Where(Q => Q == "SECURITY").Any();
+    }
 
-* Copyright  Creative Tim (http://www.creative-tim.com)
-* Coded by www.creative-tim.com
+}
 
-
-
-=========================================================
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
--->
 <!DOCTYPE html>
 <html>
 <head>
@@ -48,32 +48,38 @@
                                 <span class="nav-link-text">Dashboard</span>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/temperatures">
-                                <i class="ni ni-sound-wave text-green"></i>
-                                <span class="nav-link-text">Temperature</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/departments">
-                                <i class="ni ni-building text-orange"></i>
-                                <span class="nav-link-text">Department</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/divisions">
-                                <i class="ni ni-briefcase-24 text-primary"></i>
-                                <span class="nav-link-text">Divisions</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/employees">
-                                <i class="ni ni-single-02 text-yellow"></i>
-                                <span class="nav-link-text">Employee</span>
-                            </a>
-                        </li>
+                        @if (isAdmin || isSecurity)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" href="/temperatures">
+                                    <i class="ni ni-sound-wave text-green"></i>
+                                    <span class="nav-link-text">Temperature</span>
+                                </a>
+                            </li>
+                        }
+                        @if (isAdmin)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" href="/departments">
+                                    <i class="ni ni-building text-orange"></i>
+                                    <span class="nav-link-text">Department</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/divisions">
+                                    <i class="ni ni-briefcase-24 text-primary"></i>
+                                    <span class="nav-link-text">Divisions</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/employees">
+                                    <i class="ni ni-single-02 text-yellow"></i>
+                                    <span class="nav-link-text">Employee</span>
+                                </a>
+                            </li>
+                        }
                     </ul>
-                    
+
                 </div>
             </div>
         </div>
@@ -108,11 +114,8 @@
                             <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <div class="media align-items-center">
                                     <span class="avatar avatar-sm rounded-circle">
-                                        <img alt="Image placeholder" src="~/images/theme/team-4.jpg">
+                                        <img alt="Image placeholder" src="https://inikpop.com/wp-content/uploads/2018/06/irene-thumbnail.jpg">
                                     </span>
-                                    <div class="media-body  ml-2  d-none d-lg-block">
-                                        <span class="mb-0 text-sm  font-weight-bold">John Snow</span>
-                                    </div>
                                 </div>
                             </a>
                             <div class="dropdown-menu  dropdown-menu-right ">
@@ -122,6 +125,7 @@
                                 <a href="/userprofiles" class="dropdown-item">
                                     <i class="ni ni-single-02"></i>
                                     <span>My profile</span>
+                                </a>
                                 <div class="dropdown-divider"></div>
                                 <a href="/logins/logout" class="dropdown-item">
                                     <i class="ni ni-user-run"></i>
@@ -140,7 +144,6 @@
     </div>
     <!-- Argon Scripts -->
     <!-- Core -->
-    <script src="~/vendor/jquery/dist/jquery.min.js"></script>
     <script src="~/vendor/jquery/dist/jquery.min.js"></script>
     <script src="~/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/vendor/js-cookie/js.cookie.js"></script>

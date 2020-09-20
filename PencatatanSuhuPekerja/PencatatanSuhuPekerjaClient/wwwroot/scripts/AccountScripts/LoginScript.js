@@ -4,6 +4,7 @@
 function Login() {
     var check = validate();
     if (check == false) {
+        Swal.fire('Error', 'Invalid Data', 'error');
         return false;
     }
     var loginVM = {
@@ -24,7 +25,7 @@ function Login() {
                 window.location.href = "/Dashboards";
             }
         } else {
-            alertify.error(result.Item2);
+            Swal.fire('Error', result.Item2, 'error');
         }
     });
 }
@@ -33,7 +34,6 @@ function validate() {
     var isValid = true;
     if ($('#Email').val().trim() == "") {
         $('#Email').css('border-color', 'Red');
-        alertify.error('Email Cannot Empty');
         isValid = false;
     }
     else {
@@ -41,7 +41,6 @@ function validate() {
     }
     if ($('#Password').val().trim() == "") {
         $('#Password').css('border-color', 'Red');
-        alertify.error('Password Cannot Empty');
         isValid = false;
     }
     else {

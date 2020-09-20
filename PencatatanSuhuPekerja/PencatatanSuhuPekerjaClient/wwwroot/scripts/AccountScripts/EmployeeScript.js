@@ -76,7 +76,7 @@ function getDepartmentDropdown() {
             };
         },
         failure: function (response) {
-            alert(response);
+            swal.fire('error', 'error getting Department Data !', 'error');
         }
     });
 };
@@ -102,7 +102,7 @@ function getDivisionDropDown() {
             };
         },
         failure: function (response) {
-            alert(response);
+            swal.fire('error', 'error getting Division Data !', 'error');
         }
     });
 };
@@ -128,7 +128,7 @@ function Delete(index) {
                     $('#myModal').modal('hide');
                     Swal.fire({
                         position: 'center',
-                        icon: 'success',
+                        icon: 'Data Successfully Deleted !',
                         title: result.data,
                         showConfirmButton: false,
                         timer: 1500,
@@ -197,6 +197,7 @@ function Update() {
                 timer: 1500,
             })
             table.ajax.reload(null, false);
+
         } else {
             Swal.fire('Error', 'Failed to Update', 'error');
             clearTextBox();
@@ -217,5 +218,61 @@ function clearTextBox() {
 
 function validate() {
     var isValid = true;
+    if ($('#FirstName').val().trim() == "") {
+        $('#FirstName').css('border-color', 'Red');
+        isValid = false;
+    }
+    else {
+        $('#FirstName').css('border-color', 'lightgrey');
+    }
+    if ($('#LastName').val().trim() == "") {
+        $('#LastName').css('border-color', 'Red');
+        isValid = false;
+    }
+    else {
+        $('#LastName').css('border-color', 'lightgrey');
+    }
+    if ($('#UserName').val().trim() == "") {
+        $('#UserName').css('border-color', 'Red');
+        isValid = false;
+    }
+    else {
+        $('#UserName').css('border-color', 'lightgrey');
+    }
+    if ($('#Email').val().trim() == "") {
+        $('#Email').css('border-color', 'Red');
+        isValid = false;
+    }
+    else {
+        $('#Email').css('border-color', 'lightgrey');
+    }
+    if ($('#PhoneNumber').val().trim() == "") {
+        $('#PhoneNumber').css('border-color', 'Red');
+        isValid = false;
+    }
+    else {
+        $('#PhoneNumber').css('border-color', 'lightgrey');
+    }
+    if ($('#Salary').val().trim() == "") {
+        $('#Salary').css('border-color', 'Red');
+        isValid = false;
+    }
+    else {
+        $('#Salary').css('border-color', 'lightgrey');
+    }
+    if ($('#DepartOption').val().trim() == "") {
+        $('#DepartOption').css('border-color', 'Red');
+        isValid = false;
+    }
+    else {
+        $('#DepartOption').css('border-color', 'lightgrey');
+    }
+    if ($('#DivisionOption').val().trim() == "") {
+        $('#DivisionOption').css('border-color', 'Red');
+        isValid = false;
+    }
+    else {
+        $('#DivisionOption').css('border-color', 'lightgrey');
+    }
     return isValid;
 };

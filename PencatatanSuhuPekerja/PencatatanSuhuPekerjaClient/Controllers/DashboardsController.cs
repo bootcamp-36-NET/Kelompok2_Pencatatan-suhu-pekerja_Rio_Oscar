@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace PencatatanSuhuPekerjaClient.Controllers
@@ -21,8 +22,8 @@ namespace PencatatanSuhuPekerjaClient.Controllers
 
         public IActionResult LoadChartData()
         {
-            //var authToken = HttpContext.Session.GetString("JWToken");
-            //client.DefaultRequestHeaders.Add("Authorization", authToken);
+            var authToken = HttpContext.Session.GetString("JWToken");
+            client.DefaultRequestHeaders.Add("Authorization", authToken);
 
             List<int> chartData = null;
             var restask = client.GetAsync("Dashboards");

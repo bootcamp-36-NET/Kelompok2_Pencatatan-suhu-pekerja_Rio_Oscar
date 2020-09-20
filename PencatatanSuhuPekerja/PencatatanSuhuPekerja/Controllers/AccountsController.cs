@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PencatatanSuhuPekerjaAPI.Repositories;
@@ -22,6 +24,7 @@ namespace PencatatanSuhuPekerjaAPI.Controllers
         }
 
         // GET: Accounts/{id}
+        [Authorize(AuthenticationSchemes = "Bearer")]
         [HttpGet("{id}")]
         public async Task<ActionResult> GetUserById(string id)
         {
@@ -76,6 +79,7 @@ namespace PencatatanSuhuPekerjaAPI.Controllers
         }
 
         // PUT: Accounts/{id}
+        [Authorize(AuthenticationSchemes = "Bearer")]
         [HttpPut("{id}")]
         public async Task<ActionResult> EditProfile(string id, EditEmployeeVM editEmployeeVM)
         {
@@ -89,6 +93,7 @@ namespace PencatatanSuhuPekerjaAPI.Controllers
         }
 
         // PUT: Accounts/ChangePassword/{id}
+        [Authorize(AuthenticationSchemes = "Bearer")]
         [HttpPut("ChangePassword/{id}")]
         public async Task<ActionResult> ChangePassoword(string id, ChangePasswordVM changePasswordVM)
         {

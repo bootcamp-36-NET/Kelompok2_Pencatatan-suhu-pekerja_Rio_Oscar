@@ -32,9 +32,7 @@ namespace PencatatanSuhuPekerjaClient.Controllers
             var resTask = client.PostAsync("accounts/login", contentData);
 
             var result = resTask.Result;
-            var responseData = result.Content.ReadAsStringAsync().Result;
-
-            
+            var responseData = result.Content.ReadAsStringAsync().Result;   
 
             if (result.IsSuccessStatusCode)
             {
@@ -47,8 +45,6 @@ namespace PencatatanSuhuPekerjaClient.Controllers
                 HttpContext.Session.SetString("roles", token.Claims.First(c => c.Type == "Roles").Value);
                 HttpContext.Session.SetString("verified", token.Claims.First(c => c.Type == "IsVerified").Value);
                 HttpContext.Session.SetString("JWToken", authToken);
-
-                //client.DefaultRequestHeaders.Add("Authorization", authToken);
 
                 return Json((result,responseData, isVerified), new Newtonsoft.Json.JsonSerializerSettings());
             }

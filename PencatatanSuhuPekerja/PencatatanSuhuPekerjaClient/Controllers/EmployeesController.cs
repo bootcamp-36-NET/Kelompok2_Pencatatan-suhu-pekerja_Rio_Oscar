@@ -48,8 +48,8 @@ namespace PencatatanSuhuPekerjaClient.Controllers
         {
             IEnumerable<EmployeeVM> employees = null;
 
-            //var authToken = HttpContext.Session.GetString("JWToken");
-            //client.DefaultRequestHeaders.Add("Authorization", authToken);
+            var authToken = HttpContext.Session.GetString("JWToken");
+            client.DefaultRequestHeaders.Add("Authorization", authToken);
 
             var resTask = client.GetAsync("Employees");
             resTask.Wait();
@@ -70,8 +70,8 @@ namespace PencatatanSuhuPekerjaClient.Controllers
         {
             EmployeeVM employees = null;
 
-            //var authToken = HttpContext.Session.GetString("JWToken");
-            //client.DefaultRequestHeaders.Add("Authorization", authToken);
+            var authToken = HttpContext.Session.GetString("JWToken");
+            client.DefaultRequestHeaders.Add("Authorization", authToken);
 
             var resTask = client.GetAsync("Employees/" + id);
             resTask.Wait();
@@ -92,8 +92,8 @@ namespace PencatatanSuhuPekerjaClient.Controllers
             string stringData = JsonConvert.SerializeObject(editEmployeeVM);
             var contentData = new StringContent(stringData, System.Text.Encoding.UTF8, "application/json");
 
-            //var authToken = HttpContext.Session.GetString("JWToken");
-            //client.DefaultRequestHeaders.Add("Authorization", authToken);
+            var authToken = HttpContext.Session.GetString("JWToken");
+            client.DefaultRequestHeaders.Add("Authorization", authToken);
 
             var resTask = client.PutAsync("Employees/" + editEmployeeVM.Id, contentData);
 
@@ -105,8 +105,8 @@ namespace PencatatanSuhuPekerjaClient.Controllers
 
         public JsonResult Delete(string id)
         {
-            //var authToken = HttpContext.Session.GetString("JWToken");
-            //client.DefaultRequestHeaders.Add("Authorization", authToken);
+            var authToken = HttpContext.Session.GetString("JWToken");
+            client.DefaultRequestHeaders.Add("Authorization", authToken);
 
             var resTask = client.DeleteAsync("Employees/" + id);
             resTask.Wait();
