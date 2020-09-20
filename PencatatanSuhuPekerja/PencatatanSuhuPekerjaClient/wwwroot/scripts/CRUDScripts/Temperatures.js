@@ -179,13 +179,14 @@ function RenderEmployee(element) {
     $option.empty();
     $option.append($('<option/>').val('0').text('Select Employee').hide());
     $.each(arrDepart, function (i, val) {
-        $option.append($('<option/>').val(val.Id).text(val.FirstName));
+        $option.append($('<option/>').val(val.Id).text(val.FirstName + " " + val.LastName));   
     });
 }
 
 LoadEmployee($('#DepartOption'));
 
 function ClearScreen() {
+    LoadEmployee($('#DepartOption'));
     $('#Id').val('');
     $('#Name').val('');
     $('#Update').hide();
