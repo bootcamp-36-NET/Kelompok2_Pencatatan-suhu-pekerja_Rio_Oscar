@@ -2,6 +2,7 @@
 });
 
 function Verify() {
+    Swal.showLoading()
     var check = validate();
     if (check == false) {
         return false;
