@@ -2,8 +2,10 @@
 });
 
 function Login() {
+    debugger;
+    Swal.showLoading()
     var check = validate();
-    if (check == false) {
+    if (check === false) {
         return false;
     }
     var loginVM = {
@@ -18,7 +20,7 @@ function Login() {
         dataType: "JSON"
     }).then((result) => {
         if (result.Item1.StatusCode == 200) {
-            if (result.Item3 == "false") {
+            if (result.Item3 === "false") {
                 window.location.href = "/verifies";
             } else {
                 window.location.href = "/Dashboards";
