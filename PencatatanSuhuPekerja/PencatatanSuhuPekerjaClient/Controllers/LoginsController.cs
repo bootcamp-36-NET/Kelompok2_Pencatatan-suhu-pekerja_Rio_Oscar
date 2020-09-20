@@ -34,10 +34,13 @@ namespace PencatatanSuhuPekerjaClient.Controllers
             var result = resTask.Result;
             var responseData = result.Content.ReadAsStringAsync().Result;
 
+            
+
             if (result.IsSuccessStatusCode)
             {
                 var token = new JwtSecurityToken(jwtEncodedString: responseData);
                 var authToken = "Bearer " + responseData;
+                var isVerified = token.Claims.First(c => c.Type == "IsVerified").Value;
 
                 HttpContext.Session.SetString("id", token.Claims.First(c => c.Type == "Id").Value);
                 HttpContext.Session.SetString("email", token.Claims.First(c => c.Type == "Email").Value);
@@ -47,7 +50,7 @@ namespace PencatatanSuhuPekerjaClient.Controllers
 
                 //client.DefaultRequestHeaders.Add("Authorization", authToken);
 
-                return Json((result,responseData), new Newtonsoft.Json.JsonSerializerSettings());
+                return Json((result,responseData, isVerified), new Newtonsoft.Json.JsonSerializerSettings());
             }
             return Json((result, responseData), new Newtonsoft.Json.JsonSerializerSettings());
         }
@@ -55,7 +58,7 @@ namespace PencatatanSuhuPekerjaClient.Controllers
         public IActionResult Logout()
         {
             HttpContext.Session.Clear();
-            return Redirect("/login");
+            return Redirect("/logins");
         }
     }
 }

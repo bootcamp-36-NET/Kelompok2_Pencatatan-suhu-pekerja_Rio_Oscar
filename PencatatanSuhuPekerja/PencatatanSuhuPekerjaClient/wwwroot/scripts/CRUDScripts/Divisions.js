@@ -238,6 +238,7 @@ LoadDepart($('#DepartOption'));
 
 function ClearScreen() {
     $('#Id').val('');
+    $('#DepartOption').empty();
     $('#Name').val('');
     $('#Update').hide();
     $('#Insert').show();

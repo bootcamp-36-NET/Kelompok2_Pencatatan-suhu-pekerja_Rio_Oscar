@@ -17,6 +17,10 @@ namespace PencatatanSuhuPekerjaClient.Controllers
 
         public IActionResult Index()
         {
+            if (!HttpContext.Session.IsAvailable)
+            {
+                return Redirect("/logins");
+            }
             return View();
         }
 
@@ -36,7 +40,7 @@ namespace PencatatanSuhuPekerjaClient.Controllers
             var responseData = result.Content.ReadAsStringAsync().Result;
             if (result.IsSuccessStatusCode)
             {
-                HttpContext.Session.SetString("IsVerified", "true");
+                HttpContext.Session.SetString("verified", "true");
 
                 return Json((result,responseData), new Newtonsoft.Json.JsonSerializerSettings());
             }

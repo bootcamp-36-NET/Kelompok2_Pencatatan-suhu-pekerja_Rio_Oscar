@@ -19,6 +19,14 @@ namespace PencatatanSuhuPekerjaClient.Controllers
 
         public IActionResult Index()
         {
+            if (!HttpContext.Session.IsAvailable)
+            {
+                return Redirect("/logins");
+            }
+            if (HttpContext.Session.GetString("verified") == "false")
+            {
+                return Redirect("/verifies");
+            }
             return View();
         }
 

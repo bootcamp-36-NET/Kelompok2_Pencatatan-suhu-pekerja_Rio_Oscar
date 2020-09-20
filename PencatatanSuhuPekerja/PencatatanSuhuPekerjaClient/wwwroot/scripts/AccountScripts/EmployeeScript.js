@@ -1,6 +1,10 @@
-﻿var table = null
+﻿var table = null;
+var departmentSelect = $('#DepartOption');
+var divisionSelect = $('#DivisionOption');
 
 $(document).ready(function () {
+    clearTextBox();
+    getDepartmentDropdown();
     loadData();
 });
 
@@ -50,12 +54,11 @@ function loadData() {
             cell.innerHTML = i + 1;
         });
     }).draw();
-
 }
 
 function getDepartmentDropdown() {
-    var departmentSelect = $('#DepartOption');
     departmentSelect.empty();
+    divisionSelect.val("");
     $.ajax({
         type: "GET",
         url: "/Departments/LoadDepartments",
@@ -79,8 +82,8 @@ function getDepartmentDropdown() {
 };
 
 function getDivisionDropDown() {
-    var divisionSelect = $('#DivisionOption');
     divisionSelect.empty();
+    divisionSelect.val("");
     Id = $('#DepartOption').val();
     $.ajax({
         type: "GET",
@@ -138,17 +141,14 @@ function Delete(index) {
             });
         }
     })
-}
+};
 
 function GetById(index) {
     var Id = table.row(index).data().Id;
-    getDepartmentDropdown();
     $.ajax({
         url: "/Employees/GetById/",
         data: { Id: Id }
     }).then((result) => {
-        $('#myModal').modal('show');
-        $('#DepartOption').val(result.DepartmentId);
         $('#Id').val(Id);
         $('#FirstName').val(result.FirstName);
         $('#LastName').val(result.LastName);
@@ -156,11 +156,15 @@ function GetById(index) {
         $('#Email').val(result.Email);
         $('#PhoneNumber').val(result.PhoneNumber);
         $('#Salary').val(result.Salary);
-        $('#DivisionOption').val(result.DivisionId);
-    }).then(result => {
-        getDivisionDropDown();
+        $('#DepartOption').val(result.DepartmentId);
+        getDivisionDropDown()
+        var divId = result.DivisionId;
+        $('#myModal').modal('show');
+        return divId
+    }).then(divId => {
+        $('#DivisionOption').val(divId);
     });
-}
+};
 
 function Update() {
     var check = validate();
@@ -198,24 +202,19 @@ function Update() {
             clearTextBox();
         }
     });
-}
+};
 
 //Function for clearing the textboxes
 function clearTextBox() {
-    departmentSelect.empty();
-    divisionSelect.empty();
     $('#Id').val("");
     $('#FirstName').val("");
     $('#LastName').val("");
     $('#UserName').val("");
     $('#Email').val("");
     $('#PhoneNumber').val("");
-}
+};
 
 function validate() {
     var isValid = true;
     return isValid;
-}
-
-
-
+};

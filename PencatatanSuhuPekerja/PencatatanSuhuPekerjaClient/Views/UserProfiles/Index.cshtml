@@ -1,7 +1,15 @@
-﻿
+﻿@using Microsoft.AspNetCore.Http
+
 @{
+    var isInRole = false;
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    if (Context.Session.IsAvailable)
+    {
+        var stringRole = Context.Session.GetString("roles");
+        var roles = stringRole.Split(',').ToList();
+        isInRole = roles.Where(Q => Q == "ADMIN").Any();
+    }
 }
 
 
@@ -37,7 +45,11 @@
                         <p class="text-white mt-0 mb-5">Keep a Safe Distance to Slow the Spread. Limiting close face-to-face contact with others is the best way to reduce the spread of coronavirus disease 2019 (COVID-19)</p>
                         <a href="/EditUserProfiles" class="btn btn-neutral">Edit profile</a>
                         <a href="/ChangePasswords" class="btn btn-neutral">Change Password</a>
-                    </div>
+                        @if (isInRole)
+                        {
+                            <a href="/Employees" class="btn btn-neutral">Manage Employee</a>
+                        }
+                        </div>
                 </div>
             </div>
         </div>
@@ -114,45 +126,45 @@
                         <hr class="my-4" />
                         <!-- Address -->
                         @*<h6 class="heading-small text-muted mb-4">Contact information</h6>
-                        <div class="pl-lg-4">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label class="form-control-label" for="input-address">Address</label>
-                                        <input id="input-address" class="form-control" placeholder="Home Address" value="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09" type="text">
+                            <div class="pl-lg-4">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="form-control-label" for="input-address">Address</label>
+                                            <input id="input-address" class="form-control" placeholder="Home Address" value="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09" type="text">
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-4">
-                                    <div class="form-group">
-                                        <label class="form-control-label" for="input-city">City</label>
-                                        <input type="text" id="input-city" class="form-control" placeholder="City" value="New York">
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <div class="form-group">
+                                            <label class="form-control-label" for="input-city">City</label>
+                                            <input type="text" id="input-city" class="form-control" placeholder="City" value="New York">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="form-group">
+                                            <label class="form-control-label" for="input-country">Country</label>
+                                            <input type="text" id="input-country" class="form-control" placeholder="Country" value="United States">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="form-group">
+                                            <label class="form-control-label" for="input-country">Postal code</label>
+                                            <input type="number" id="input-postal-code" class="form-control" placeholder="Postal code">
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-4">
-                                    <div class="form-group">
-                                        <label class="form-control-label" for="input-country">Country</label>
-                                        <input type="text" id="input-country" class="form-control" placeholder="Country" value="United States">
-                                    </div>
-                                </div>
-                                <div class="col-lg-4">
-                                    <div class="form-group">
-                                        <label class="form-control-label" for="input-country">Postal code</label>
-                                        <input type="number" id="input-postal-code" class="form-control" placeholder="Postal code">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>*@
+                            </div>*@
                         @*<hr class="my-4" />*@
                         <!-- Description -->
                         @*<h6 class="heading-small text-muted mb-4">About me</h6>
-                        <div class="pl-lg-4">
-                            <div class="form-group">
-                                <label class="form-control-label">About Me</label>
-                                <textarea rows="4" class="form-control" placeholder="A few words about you ...">A beautiful Dashboard for Bootstrap 4. It is Free and Open Source.</textarea>
-                            </div>
-                        </div>*@
+                            <div class="pl-lg-4">
+                                <div class="form-group">
+                                    <label class="form-control-label">About Me</label>
+                                    <textarea rows="4" class="form-control" placeholder="A few words about you ...">A beautiful Dashboard for Bootstrap 4. It is Free and Open Source.</textarea>
+                                </div>
+                            </div>*@
                     </div>
                 </div>
             </div>

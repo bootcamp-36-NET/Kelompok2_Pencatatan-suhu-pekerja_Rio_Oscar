@@ -34,7 +34,7 @@ namespace PencatatanSuhuPekerjaAPI.Repositories
                     DepartmentName = q.Employee.Division.Department.Name,
                     DivisionName = q.Employee.Division.Name,
                     DivisionId = q.Employee.Division.Id,
-                    DepartmentId= q.Employee.Division.Id,
+                    DepartmentId= q.Employee.Division.Department.Id,
                     PhoneNumber = q.PhoneNumber,
                     UserName = q.UserName,
                     Salary = q.Employee.Salary,

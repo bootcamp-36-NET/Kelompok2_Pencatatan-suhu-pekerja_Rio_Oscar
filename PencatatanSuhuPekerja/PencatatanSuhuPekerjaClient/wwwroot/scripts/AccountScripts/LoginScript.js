@@ -18,7 +18,11 @@ function Login() {
         dataType: "JSON"
     }).then((result) => {
         if (result.Item1.StatusCode == 200) {
-                window.location.href = "/UserProfiles";
+            if (result.Item3 == "false") {
+                window.location.href = "/verifies";
+            } else {
+                window.location.href = "/Dashboards";
+            }
         } else {
             alertify.error(result.Item2);
         }

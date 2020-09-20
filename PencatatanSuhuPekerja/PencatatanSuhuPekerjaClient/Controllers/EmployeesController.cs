@@ -21,6 +21,27 @@ namespace PencatatanSuhuPekerjaClient.Controllers
 
         public IActionResult Index()
         {
+            if (!HttpContext.Session.IsAvailable)
+            {
+                return Redirect("/logins");
+            }
+            if (HttpContext.Session.GetString("verified") == "false")
+            {
+                return Redirect("/verifies");
+            }
+            if (HttpContext.Session.GetString("roles") == null)
+            {
+                return Redirect("/logins");
+            }
+            var stringRole = HttpContext.Session.GetString("roles");
+            var roles = stringRole.Split(',').ToList();
+            foreach (var role in roles)
+            {
+                if (role == "ADMIN")
+                {
+                    return View();
+                }
+            }
             return View();
         }
         public IActionResult LoadEmployee()

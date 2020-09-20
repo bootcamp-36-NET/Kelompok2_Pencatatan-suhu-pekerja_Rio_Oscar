@@ -70,6 +70,7 @@ namespace PencatatanSuhuPekerjaAPI
             services.AddScoped<EmployeeRepository>();
             services.AddScoped<DepartmentRepository>();
             services.AddScoped<DivisionRepository>();
+            services.AddScoped<DashboardRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
