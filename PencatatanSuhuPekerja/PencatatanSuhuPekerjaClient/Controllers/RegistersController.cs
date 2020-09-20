@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using PencatatanSuhuPekerjaAPI.ViewModels.AccountVM;
@@ -18,6 +19,13 @@ namespace PencatatanSuhuPekerjaClient.Controllers
 
         public IActionResult Index()
         {
+            if (HttpContext.Session.IsAvailable)
+            {
+                if (HttpContext.Session.GetString("id") != null)
+                {
+                    return Redirect("/dashboards");
+                }
+            }
             return View();
         }
 

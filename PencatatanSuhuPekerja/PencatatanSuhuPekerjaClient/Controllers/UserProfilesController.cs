@@ -23,6 +23,10 @@ namespace PencatatanSuhuPekerjaClient.Controllers
             {
                 return Redirect("/logins");
             }
+            if (HttpContext.Session.GetString("id") == null)
+            {
+                return Redirect("/logins");
+            }
             if (HttpContext.Session.GetString("verified") == "false")
             {
                 return Redirect("/verifies");

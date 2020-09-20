@@ -17,6 +17,20 @@ namespace PencatatanSuhuPekerjaClient.Controllers
 
         public IActionResult Index()
         {
+            if (!HttpContext.Session.IsAvailable)
+            {
+                return Redirect("/logins");
+            }
+            if (HttpContext.Session.GetString("id") == null)
+            {
+                return Redirect("/logins");
+            }
+            if (HttpContext.Session.GetString("verified") == "false")
+            {
+                return Redirect("/verifies");
+            }
+
+
             return View();
         }
 
@@ -36,7 +50,7 @@ namespace PencatatanSuhuPekerjaClient.Controllers
                 chartData = readTask.Result;
             }
 
-            return Json((result,chartData), new Newtonsoft.Json.JsonSerializerSettings());
+            return Json((result, chartData), new Newtonsoft.Json.JsonSerializerSettings());
 
         }
     }

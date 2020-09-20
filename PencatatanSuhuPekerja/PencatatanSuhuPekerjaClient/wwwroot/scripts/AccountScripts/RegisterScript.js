@@ -2,6 +2,7 @@
 });
 
 function Register() {
+    Swal.showLoading()
     var check = validate();
     if (check == false) {
         swal.fire('error', 'invalid Input', 'error');

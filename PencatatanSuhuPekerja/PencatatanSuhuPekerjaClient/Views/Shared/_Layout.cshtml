@@ -5,10 +5,13 @@
     var isSecurity = false;
     if (Context.Session.IsAvailable)
     {
-        var stringRole = Context.Session.GetString("roles");
-        var roles = stringRole.Split(',').ToList();
-        isAdmin = roles.Where(Q => Q == "ADMIN").Any();
-        isSecurity = roles.Where(Q => Q == "SECURITY").Any();
+        if (Context.Session.GetString("roles") != null)
+        {
+            var stringRole = Context.Session.GetString("roles");
+            var roles = stringRole.Split(',').ToList();
+            isAdmin = roles.Where(Q => Q == "ADMIN").Any();
+            isSecurity = roles.Where(Q => Q == "SECURITY").Any();
+        }
     }
 
 }
@@ -43,7 +46,7 @@
                     <!-- Nav items -->
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link active" href="/dashboard">
+                            <a class="nav-link active" href="/dashboards">
                                 <i class="ni ni-tv-2 text-primary"></i>
                                 <span class="nav-link-text">Dashboard</span>
                             </a>

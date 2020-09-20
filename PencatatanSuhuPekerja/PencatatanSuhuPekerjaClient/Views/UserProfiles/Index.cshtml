@@ -6,9 +6,12 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
     if (Context.Session.IsAvailable)
     {
-        var stringRole = Context.Session.GetString("roles");
-        var roles = stringRole.Split(',').ToList();
-        isInRole = roles.Where(Q => Q == "ADMIN").Any();
+        if (Context.Session.GetString("roles") != null)
+        {
+            var stringRole = Context.Session.GetString("roles");
+            var roles = stringRole.Split(',').ToList();
+            isInRole = roles.Where(Q => Q == "ADMIN").Any();
+        }
     }
 }
 

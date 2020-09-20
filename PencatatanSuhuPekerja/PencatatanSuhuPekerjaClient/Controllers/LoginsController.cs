@@ -21,6 +21,14 @@ namespace PencatatanSuhuPekerjaClient.Controllers
         // GET: Login
         public ActionResult Index()
         {
+            if (HttpContext.Session.IsAvailable)
+            {
+                if (HttpContext.Session.GetString("id") != null)
+                {
+                    return Redirect("/dashboards");
+                }
+            }
+
             return View();
         }
 

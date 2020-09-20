@@ -21,6 +21,15 @@ namespace PencatatanSuhuPekerjaClient.Controllers
             {
                 return Redirect("/logins");
             }
+            if (HttpContext.Session.GetString("id") == null)
+            {
+                return Redirect("/logins");
+            }
+            if (HttpContext.Session.GetString("verified") == "true")
+            {
+                return Redirect("/dashboards");
+            }
+
             return View();
         }
 
@@ -42,7 +51,7 @@ namespace PencatatanSuhuPekerjaClient.Controllers
             {
                 HttpContext.Session.SetString("verified", "true");
 
-                return Json((result,responseData), new Newtonsoft.Json.JsonSerializerSettings());
+                return Json((result, responseData), new Newtonsoft.Json.JsonSerializerSettings());
             }
 
             return Json((result, responseData), new Newtonsoft.Json.JsonSerializerSettings());

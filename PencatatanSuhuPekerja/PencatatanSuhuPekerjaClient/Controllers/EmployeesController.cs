@@ -42,7 +42,7 @@ namespace PencatatanSuhuPekerjaClient.Controllers
                     return View();
                 }
             }
-            return View();
+            return Redirect("/error");
         }
         public IActionResult LoadEmployee()
         {
