@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using PencatatanSuhuPekerjaAPI.Context;
 using PencatatanSuhuPekerjaAPI.Models;
+using PencatatanSuhuPekerjaAPI.Services;
 
 namespace PencatatanSuhuPekerjaAPI.Controllers
 {
@@ -17,11 +18,13 @@ namespace PencatatanSuhuPekerjaAPI.Controllers
     {
         public IConfiguration _configuration;
         private readonly MyContext _context;
+        private readonly SendEmailService _sendEmailService;
 
-        public TemperaturesController(IConfiguration myConfiguration, MyContext myContext)
+        public TemperaturesController(IConfiguration myConfiguration, MyContext myContext, SendEmailService sendEmailService)
         {
             _configuration = myConfiguration;
             _context = myContext;
+            _sendEmailService = sendEmailService;
         }
 
         // GET: api/Temperatures
@@ -49,6 +52,13 @@ namespace PencatatanSuhuPekerjaAPI.Controllers
         [HttpPost]
         public IActionResult Create(Temperature temperature)
         {
+            var employee = _context.Employees.Include("User").SingleOrDefault(x => x.EmployeeId == temperature.EmployeeId);
+            var suhu = temperature.EmployeeTemperature;
+            var suhus = Convert.ToDouble(suhu);
+            if (suhus >= 37.5 )
+            {
+                _sendEmailService.SendEmail(employee.User.Email, suhus, employee);
+            }
             temperature.Date = DateTimeOffset.Now;
             _context.Temperatures.Add(temperature);
             _context.SaveChanges();

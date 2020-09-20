@@ -30,14 +30,15 @@ namespace PencatatanSuhuPekerjaAPI.Services
                 }
             }
         }
-        public void SendEmail(string email, string temperature, Employee emloyee)
+                 
+        public void SendEmail(string email, double temperature, Employee emloyee)
         {
             using (var message = new MailMessage())
             {
                 message.To.Add(new MailAddress(email));
                 message.From = new MailAddress("xyztechnologyid@gmail.com", "System Admin");
                 message.Subject = "Warning at " + DateTime.Now.ToString("dddd, MMMM dd yyyy");
-                message.Body = "Please don't share this code to anyone,<br>Registration Code :<br><br><b>" + emloyee.FirstName + "</b><br><br> Please enter this code when you want to verfy you account !";
+                message.Body = "Dear Mr/Ms "+ emloyee.FirstName + " " + emloyee.LastName + ",<br>Your Temperature is :<br><br><b>" + temperature + "</b><br><br> Please do the Covid19 protocol";
                 message.IsBodyHtml = true;
 
                 using (var client = new SmtpClient("smtp.gmail.com"))

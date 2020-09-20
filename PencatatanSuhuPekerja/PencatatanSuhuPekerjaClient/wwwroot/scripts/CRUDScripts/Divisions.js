@@ -6,18 +6,18 @@ $(document).ready(function () {
     table = $("#dataTable").DataTable({
         "processing": true,
         "responsive": true,
-        "pagination": true,
+        "pagination": true, 
         "stateSave": true,
-        "ajax": {
+        "ajax": {   
             url: "/Divisions/LoadDivisions",
-            type: "GET",
+            type: "GET",  
             dataType: "json",
             dataSrc: ""
         },
 
         "columnDefs": [{
             sortable: false,
-            "class": "index",
+            "class": "index", 
             targets: 0
         }],
         order: [[1, 'asc']],
@@ -206,7 +206,7 @@ function GetById(nummber) {
         $('#exampleModal').modal('show');
     });
 }
-
+  
 
 function LoadDepart(element) {
     //debugger;
@@ -218,7 +218,7 @@ function LoadDepart(element) {
                 arrDepart = data;
                 renderDepart(element);
             }
-        });
+        }); 
     }
     else {
         renderDepart(element);
@@ -237,6 +237,7 @@ function renderDepart(element) {
 LoadDepart($('#DepartOption'));
 
 function ClearScreen() {
+    LoadDepart($('#DepartOption'));     
     $('#Id').val('');
     $('#DepartOption').empty();
     $('#Name').val('');
@@ -246,7 +247,7 @@ function ClearScreen() {
 
 function Save() {
     debugger;
-    var Div = new Object();
+    var Div = new Object();  
     Div.Id = null;
     Div.Name = $('#Name').val();
     Div.departmentId = $('#DepartOption').val();

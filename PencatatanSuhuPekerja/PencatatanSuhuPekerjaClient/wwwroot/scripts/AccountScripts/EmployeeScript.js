@@ -206,6 +206,7 @@ function Update() {
 
 //Function for clearing the textboxes
 function clearTextBox() {
+    divisionSelect.empty(); 
     $('#Id').val("");
     $('#FirstName').val("");
     $('#LastName').val("");

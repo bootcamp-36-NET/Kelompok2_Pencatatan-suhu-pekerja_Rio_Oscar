@@ -31,7 +31,6 @@ E:\Rio\Tugas Bootcamp\V2\Kelompok4_Pencatatan-suhu-pekerja_Rio_Oscar\PencatatanS
 E:\Rio\Tugas Bootcamp\V2\Kelompok4_Pencatatan-suhu-pekerja_Rio_Oscar\PencatatanSuhuPekerja\PencatatanSuhuPekerja\bin\Debug\netcoreapp2.1\PencatatanSuhuPekerjaAPI.runtimeconfig.dev.json
 E:\Rio\Tugas Bootcamp\V2\Kelompok4_Pencatatan-suhu-pekerja_Rio_Oscar\PencatatanSuhuPekerja\PencatatanSuhuPekerja\bin\Debug\netcoreapp2.1\PencatatanSuhuPekerjaAPI.dll
 E:\Rio\Tugas Bootcamp\V2\Kelompok4_Pencatatan-suhu-pekerja_Rio_Oscar\PencatatanSuhuPekerja\PencatatanSuhuPekerja\bin\Debug\netcoreapp2.1\PencatatanSuhuPekerjaAPI.pdb
-E:\Rio\Tugas Bootcamp\V2\Kelompok4_Pencatatan-suhu-pekerja_Rio_Oscar\PencatatanSuhuPekerja\PencatatanSuhuPekerja\obj\Debug\netcoreapp2.1\PencatatanSuhuPekerjaAPI.csprojAssemblyReference.cache
 E:\Rio\Tugas Bootcamp\V2\Kelompok4_Pencatatan-suhu-pekerja_Rio_Oscar\PencatatanSuhuPekerja\PencatatanSuhuPekerja\obj\Debug\netcoreapp2.1\PencatatanSuhuPekerjaAPI.csproj.CoreCompileInputs.cache
 E:\Rio\Tugas Bootcamp\V2\Kelompok4_Pencatatan-suhu-pekerja_Rio_Oscar\PencatatanSuhuPekerja\PencatatanSuhuPekerja\obj\Debug\netcoreapp2.1\PencatatanSuhuPekerjaAPI.RazorAssemblyInfo.cache
 E:\Rio\Tugas Bootcamp\V2\Kelompok4_Pencatatan-suhu-pekerja_Rio_Oscar\PencatatanSuhuPekerja\PencatatanSuhuPekerja\obj\Debug\netcoreapp2.1\PencatatanSuhuPekerjaAPI.RazorAssemblyInfo.cs
@@ -40,3 +39,4 @@ E:\Rio\Tugas Bootcamp\V2\Kelompok4_Pencatatan-suhu-pekerja_Rio_Oscar\PencatatanS
 E:\Rio\Tugas Bootcamp\V2\Kelompok4_Pencatatan-suhu-pekerja_Rio_Oscar\PencatatanSuhuPekerja\PencatatanSuhuPekerja\obj\Debug\netcoreapp2.1\PencatatanSuhuPekerjaAPI.RazorTargetAssemblyInfo.cache
 E:\Rio\Tugas Bootcamp\V2\Kelompok4_Pencatatan-suhu-pekerja_Rio_Oscar\PencatatanSuhuPekerja\PencatatanSuhuPekerja\obj\Debug\netcoreapp2.1\PencatatanSuhuPekerjaAPI.dll
 E:\Rio\Tugas Bootcamp\V2\Kelompok4_Pencatatan-suhu-pekerja_Rio_Oscar\PencatatanSuhuPekerja\PencatatanSuhuPekerja\obj\Debug\netcoreapp2.1\PencatatanSuhuPekerjaAPI.pdb
+E:\Rio\Tugas Bootcamp\V2\Kelompok4_Pencatatan-suhu-pekerja_Rio_Oscar\PencatatanSuhuPekerja\PencatatanSuhuPekerja\obj\Debug\netcoreapp2.1\PencatatanSuhuPekerjaAPI.csprojAssemblyReference.cache
