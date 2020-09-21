@@ -18,7 +18,7 @@ function Verify() {
         if (result.Item1.StatusCode == 200) {
             window.location.href = "/Dashboards";
         } else {
-            alertify.error(result.Item2);
+            swal.fire('error', result.item2, 'error');
         }
     });
 }
@@ -28,7 +28,6 @@ function validate() {
     var isValid = true;
     if ($('#Code').val().trim() == "") {
         $('#Code').css('border-color', 'Red');
-        alertify.error('Code Cannot Empty');
         isValid = false;
     }
     else {

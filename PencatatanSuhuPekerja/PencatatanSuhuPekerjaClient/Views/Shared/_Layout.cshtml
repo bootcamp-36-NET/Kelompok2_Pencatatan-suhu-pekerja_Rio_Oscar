@@ -40,6 +40,11 @@
     <!-- Sidenav -->
     <nav class="sidenav navbar navbar-vertical  fixed-left  navbar-expand-xs navbar-light bg-white" id="sidenav-main">
         <div class="scrollbar-inner">
+            <div class="sidenav-header  align-items-center">
+                <a class="navbar-brand" href="/dashboards">
+                    MENU
+                </a>
+            </div>
             <div class="navbar-inner">
                 <!-- Collapse -->
                 <div class="collapse navbar-collapse" id="sidenav-collapse-main">
@@ -165,3 +170,9 @@
     @RenderSection("script", required: false)
 </body>
 </html>
+
+<script>
+    if (performance.navigation.type == 2) {
+        location.reload();
+    }
+</script>

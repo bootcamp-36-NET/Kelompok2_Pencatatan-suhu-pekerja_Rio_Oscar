@@ -5,6 +5,21 @@ var divisionSelect = $('#DivisionOption');
 $(document).ready(function () {
     clearTextBox();
     getDepartmentDropdown();
+    
+    $('#dataTable thead tr').clone(true).appendTo('#dataTable thead');
+    $('#dataTable thead tr:eq(1) th').each(function (i) {
+        var title = $(this).text();
+        $(this).html('<input type="text" placeholder="Search ' + title + '" />');
+
+        $('input', this).on('keyup change', function () {
+            if (table.column(i).search() !== this.value) {
+                table
+                    .column(i)
+                    .search(this.value)
+                    .draw();
+            }
+        });
+    });
     loadData();
 });
 
@@ -38,7 +53,7 @@ function loadData() {
                         + '<button class="btn btn-outline-danger btn-circle" data-placement="right" data-toggle="tooltip" data-animation="false" title="Delete" onclick="return Delete(' + meta.row + ')" ><i class="fa fa-lg fa-times"></i></button>';
                 },
                 "sortable": false,
-                "oderable":false
+                "oderable": false,
             }
         ],
         "columnDefs": [{

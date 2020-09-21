@@ -58,7 +58,7 @@ namespace PencatatanSuhuPekerjaAPI.Controllers
             var employee = _context.Employees.Include("User").SingleOrDefault(x => x.EmployeeId == temperature.EmployeeId);
             var suhu = temperature.EmployeeTemperature;
             var suhus = Convert.ToDouble(suhu);
-            if (suhus >= 37.5 )
+            if (suhus >= 37.3 )
             {
                 _sendEmailService.SendEmail(employee.User.Email, suhus, employee);
             }
